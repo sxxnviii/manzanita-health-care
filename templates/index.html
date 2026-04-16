@@ -1,0 +1,1272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Manzanita Health Care | Home Health Services – Bay Area</title>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{
+  --navy:#0B2545;--navy2:#163A6E;--blue:#1565C0;--blue2:#1976D2;
+  --teal:#00796B;--teal2:#009688;--teal-l:#E0F2F1;
+  --gold:#F57C00;--gold-l:#FFF3E0;
+  --white:#FFFFFF;--off:#F8FAFD;--bg:#F0F4F8;
+  --border:#DDE4EE;--text:#1A2332;--mid:#4A5568;--muted:#90A4AE;
+  --green:#2E7D32;--red:#C62828;
+  --shadow:0 4px 24px rgba(11,37,69,0.10);
+  --shadow-lg:0 12px 48px rgba(11,37,69,0.16);
+}
+html{scroll-behavior:smooth;}
+body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--white);color:var(--text);overflow-x:hidden;}
+
+/* ── TOP BAR ── */
+.topbar{background:var(--navy);padding:9px 6%;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;}
+.topbar-left{display:flex;gap:22px;align-items:center;}
+.topbar-left a,.topbar-left span{font-size:0.76rem;color:#B0C4DE;text-decoration:none;display:flex;align-items:center;gap:5px;}
+.topbar-left a:hover{color:white;}
+.topbar-right{display:flex;gap:12px;align-items:center;}
+.topbar-social{display:flex;gap:8px;}
+.tsoc{width:26px;height:26px;border-radius:5px;display:flex;align-items:center;justify-content:center;font-size:0.72rem;font-weight:700;text-decoration:none;transition:opacity 0.15s;}
+.tsoc:hover{opacity:0.8;}
+.tsoc-fb{background:#1877F2;color:white;}
+.tsoc-ig{background:linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);color:white;}
+.tsoc-tw{background:#000;color:white;}
+.tsoc-yt{background:#FF0000;color:white;}
+.topbar-pill{background:var(--teal);color:white;padding:4px 12px;border-radius:20px;font-size:0.71rem;font-weight:600;letter-spacing:0.04em;}
+
+/* ── NAV ── */
+nav{position:sticky;top:0;z-index:1000;background:white;border-bottom:2px solid var(--border);box-shadow:0 2px 12px rgba(0,0,0,0.06);}
+.nav-inner{max-width:1300px;margin:0 auto;padding:0 6%;display:flex;align-items:center;justify-content:space-between;height:68px;}
+.logo{display:flex;align-items:center;gap:11px;text-decoration:none;cursor:pointer;}
+.logo-mark{width:40px;height:40px;background:linear-gradient(135deg,var(--blue),var(--teal));border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.logo-mark svg{width:20px;height:20px;fill:white;}
+.logo-words{display:flex;flex-direction:column;line-height:1.2;}
+.logo-name{font-family:'Lora',serif;font-size:1rem;font-weight:700;color:var(--navy);}
+.logo-sub{font-size:0.62rem;color:var(--muted);letter-spacing:0.09em;text-transform:uppercase;font-weight:500;}
+.nav-menu{display:flex;list-style:none;align-items:center;gap:2px;}
+.nav-menu>li{position:relative;}
+.nav-menu>li>a{display:flex;align-items:center;gap:3px;padding:8px 12px;font-size:0.81rem;font-weight:500;color:var(--mid);text-decoration:none;border-radius:6px;transition:all 0.14s;cursor:pointer;white-space:nowrap;}
+.nav-menu>li>a:hover{background:var(--bg);color:var(--navy);}
+.nav-menu>li>a.active{color:var(--blue);background:#EBF3FF;}
+.ch{font-size:0.55rem;opacity:0.5;margin-top:1px;}
+.dd{display:none;position:absolute;top:calc(100%+6px);left:0;background:white;border:1px solid var(--border);border-radius:12px;min-width:210px;box-shadow:var(--shadow-lg);z-index:999;padding:6px;overflow:hidden;}
+.nav-menu>li:hover .dd{display:block;}
+.dd a{display:flex;align-items:center;gap:10px;padding:9px 13px;font-size:0.81rem;color:var(--mid);text-decoration:none;border-radius:7px;transition:background 0.12s;cursor:pointer;}
+.dd a:hover{background:var(--bg);color:var(--navy);}
+.dd-ic{width:28px;height:28px;border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:0.88rem;flex-shrink:0;}
+.ic-b{background:#EBF3FF;}.ic-t{background:var(--teal-l);}.ic-g{background:var(--gold-l);}
+.dd-div{height:1px;background:var(--border);margin:5px 0;}
+.nav-actions{display:flex;align-items:center;gap:8px;}
+.btn-srch{background:none;border:1px solid var(--border);border-radius:7px;padding:7px 10px;cursor:pointer;color:var(--mid);font-size:0.85rem;transition:all 0.14s;}
+.btn-srch:hover{background:var(--bg);border-color:var(--blue);}
+.btn-login{background:none;border:1px solid var(--border);border-radius:7px;padding:7px 14px;font-size:0.79rem;font-weight:600;color:var(--navy);cursor:pointer;transition:all 0.14s;white-space:nowrap;}
+.btn-login:hover{background:var(--bg);}
+.btn-book{background:linear-gradient(135deg,var(--blue),var(--teal));color:white;border:none;border-radius:7px;padding:9px 18px;font-size:0.81rem;font-weight:600;cursor:pointer;transition:opacity 0.14s;white-space:nowrap;}
+.btn-book:hover{opacity:0.9;}
+.hburg{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px;}
+.hburg span{display:block;width:22px;height:2px;background:var(--text);}
+
+/* ── PAGE SYSTEM ── */
+.page{display:none;}.page.active{display:block;}
+
+/* ── SEARCH MODAL ── */
+.srch-modal{display:none;position:fixed;inset:0;background:rgba(11,37,69,0.75);z-index:9999;align-items:flex-start;justify-content:center;padding-top:110px;}
+.srch-modal.open{display:flex;}
+.srch-box{background:white;border-radius:16px;padding:28px;width:100%;max-width:620px;box-shadow:var(--shadow-lg);}
+.srch-box h3{font-size:0.78rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--muted);margin-bottom:12px;font-weight:600;}
+.srch-row{display:flex;border:2px solid var(--border);border-radius:9px;overflow:hidden;}
+.srch-row:focus-within{border-color:var(--blue);}
+.srch-row input{flex:1;padding:12px 15px;border:none;font-family:'Plus Jakarta Sans',sans-serif;font-size:0.95rem;outline:none;color:var(--text);}
+.srch-row button{background:var(--blue);color:white;border:none;padding:12px 20px;cursor:pointer;font-weight:600;font-size:0.84rem;}
+.srch-tags{display:flex;gap:7px;margin-top:12px;flex-wrap:wrap;}
+.srch-tag{padding:5px 12px;border:1px solid var(--border);border-radius:20px;font-size:0.74rem;cursor:pointer;color:var(--mid);transition:all 0.12s;}
+.srch-tag:hover{background:var(--blue);color:white;border-color:var(--blue);}
+.srch-close{float:right;background:none;border:none;font-size:1.3rem;cursor:pointer;color:var(--muted);margin-top:-4px;}
+
+/* ── VIDEO MODAL ── */
+.vid-modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.88);z-index:9999;align-items:center;justify-content:center;}
+.vid-modal.open{display:flex;}
+.vid-inner{width:90%;max-width:860px;position:relative;}
+.vid-close{position:absolute;top:-44px;right:0;background:none;border:none;color:white;font-size:1.8rem;cursor:pointer;opacity:0.8;}
+.vid-close:hover{opacity:1;}
+.vid-player{width:100%;aspect-ratio:16/9;background:#000;border-radius:12px;overflow:hidden;position:relative;}
+.vid-screen{width:100%;height:100%;background:linear-gradient(135deg,#0B2545 0%,#1565C0 40%,#00796B 100%);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:20px;}
+.vid-logo-big{font-family:'Lora',serif;font-size:2.2rem;font-weight:700;color:white;text-align:center;}
+.vid-logo-big span{color:#80DEEA;}
+.vid-tagline{font-size:1rem;color:#B0C4DE;text-align:center;max-width:500px;line-height:1.6;}
+.vid-progress{width:80%;max-width:500px;}
+.vid-bar{width:100%;height:4px;background:rgba(255,255,255,0.2);border-radius:2px;overflow:hidden;}
+.vid-fill{height:100%;background:var(--teal2);border-radius:2px;width:0%;transition:width 0.1s linear;}
+.vid-time{font-size:0.75rem;color:#90A4AE;margin-top:6px;text-align:right;}
+.vid-controls{display:flex;gap:12px;align-items:center;}
+.vid-btn{width:48px;height:48px;border-radius:50%;background:rgba(255,255,255,0.15);border:2px solid rgba(255,255,255,0.3);display:flex;align-items:center;justify-content:center;cursor:pointer;color:white;font-size:1rem;transition:all 0.15s;}
+.vid-btn:hover{background:rgba(255,255,255,0.25);}
+.vid-play-tri{width:0;height:0;border-style:solid;border-width:9px 0 9px 16px;border-color:transparent transparent transparent white;margin-left:3px;}
+.vid-pause{display:flex;gap:4px;}
+.vid-pause span{display:block;width:4px;height:18px;background:white;border-radius:2px;}
+
+/* ── HERO ── */
+.hero{min-height:92vh;background:linear-gradient(118deg,var(--navy) 0%,var(--navy2) 55%,#1a5276 100%);display:flex;align-items:center;padding-top:0;position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;inset:0;background-image:radial-gradient(circle at 20% 50%,rgba(21,101,192,0.3) 0%,transparent 50%),radial-gradient(circle at 80% 20%,rgba(0,121,107,0.2) 0%,transparent 40%);}
+.hero-grid{max-width:1300px;margin:0 auto;padding:80px 6%;display:grid;grid-template-columns:1.05fr 0.95fr;gap:60px;align-items:center;position:relative;z-index:1;width:100%;}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.14);border-radius:20px;padding:6px 14px;margin-bottom:22px;}
+.hero-dot{width:7px;height:7px;border-radius:50%;background:#4CAF50;animation:blink 2s infinite;}
+@keyframes blink{0%,100%{opacity:1;}50%{opacity:0.3;}}
+.hero-eyebrow span{font-size:0.72rem;color:#90CAF9;letter-spacing:0.08em;text-transform:uppercase;font-weight:600;}
+.hero h1{font-family:'Lora',serif;font-size:clamp(2.4rem,4vw,3.8rem);font-weight:700;color:white;line-height:1.18;margin-bottom:22px;}
+.hero h1 em{font-style:italic;color:#80DEEA;font-weight:400;}
+.hero-desc{font-size:1rem;color:#B0C4DE;line-height:1.85;max-width:490px;margin-bottom:34px;font-weight:300;}
+.hero-btns{display:flex;gap:13px;flex-wrap:wrap;margin-bottom:44px;}
+.btn-hero-p{background:linear-gradient(135deg,var(--teal),#00ACC1);color:white;padding:14px 26px;border-radius:8px;font-size:0.88rem;font-weight:600;border:none;cursor:pointer;display:inline-flex;align-items:center;gap:8px;transition:opacity 0.15s;box-shadow:0 4px 20px rgba(0,121,107,0.4);}
+.btn-hero-p:hover{opacity:0.9;}
+.btn-hero-s{background:rgba(255,255,255,0.08);color:white;padding:13px 26px;border-radius:8px;font-size:0.88rem;font-weight:500;border:1.5px solid rgba(255,255,255,0.22);cursor:pointer;transition:all 0.15s;display:inline-flex;align-items:center;gap:8px;}
+.btn-hero-s:hover{background:rgba(255,255,255,0.15);}
+.btn-vid{background:none;border:none;color:white;display:inline-flex;align-items:center;gap:10px;cursor:pointer;font-size:0.88rem;font-family:'Plus Jakarta Sans',sans-serif;padding:0;}
+.btn-vid:hover .vid-circle{background:white;}.btn-vid:hover .vid-tri{border-left-color:var(--navy);}
+.vid-circle{width:44px;height:44px;border-radius:50%;border:2px solid rgba(255,255,255,0.4);display:flex;align-items:center;justify-content:center;transition:all 0.15s;}
+.vid-tri{width:0;height:0;border-style:solid;border-width:7px 0 7px 12px;border-color:transparent transparent transparent white;margin-left:3px;transition:border-left-color 0.15s;}
+.hero-stats{display:flex;gap:32px;padding-top:32px;border-top:1px solid rgba(255,255,255,0.1);}
+.hstat-num{font-family:'Lora',serif;font-size:1.9rem;font-weight:700;color:white;line-height:1;}
+.hstat-lbl{font-size:0.7rem;color:#90A4AE;text-transform:uppercase;letter-spacing:0.08em;margin-top:4px;}
+
+/* HERO ILLUSTRATION */
+.hero-visual{display:flex;flex-direction:column;gap:14px;}
+.hero-illustration{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:20px;padding:0;overflow:hidden;position:relative;}
+.hero-svg-wrap{width:100%;aspect-ratio:4/3;}
+.hero-cards-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.hcard{background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.1);border-radius:12px;padding:16px 18px;transition:background 0.2s;}
+.hcard:hover{background:rgba(255,255,255,0.12);}
+.hcard-top{display:flex;align-items:center;gap:10px;margin-bottom:8px;}
+.hcard-icon{width:36px;height:36px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0;}
+.hci-t{background:rgba(0,150,136,0.3);}.hci-b{background:rgba(21,101,192,0.3);}
+.hci-g{background:rgba(245,124,0,0.3);}.hci-gr{background:rgba(46,125,50,0.3);}
+.hcard-title{font-size:0.83rem;font-weight:600;color:white;}
+.hcard-sub{font-size:0.72rem;color:#90A4AE;}
+.hcard-body{font-size:0.77rem;color:#B0C4DE;line-height:1.5;}
+.hcard-badge{display:inline-block;background:rgba(76,175,80,0.2);color:#81C784;font-size:0.68rem;padding:2px 8px;border-radius:4px;font-weight:600;margin-top:8px;}
+
+/* ── ALERT ── */
+.alert-strip{background:var(--teal-l);border-bottom:1px solid #B2DFDB;padding:11px 6%;}
+.alert-strip-in{max-width:1300px;margin:0 auto;display:flex;align-items:center;gap:10px;}
+.alert-strip p{font-size:0.82rem;color:var(--teal);}
+.alert-strip a{color:var(--teal);font-weight:700;text-decoration:none;}
+
+/* ── SECTIONS ── */
+.sec{padding:80px 6%;}
+.sec-in{max-width:1300px;margin:0 auto;}
+.sec-lbl{font-size:0.71rem;font-weight:700;letter-spacing:0.13em;text-transform:uppercase;color:var(--blue);margin-bottom:9px;}
+.sec-title{font-family:'Lora',serif;font-size:clamp(1.8rem,3vw,2.6rem);font-weight:700;color:var(--navy);line-height:1.22;margin-bottom:14px;}
+.sec-title em{font-style:italic;font-weight:400;color:var(--blue2);}
+.sec-sub{font-size:0.93rem;color:var(--mid);line-height:1.82;max-width:550px;font-weight:300;}
+.sec-hd{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:48px;gap:28px;flex-wrap:wrap;}
+.bg-off{background:var(--off);}
+.bg-navy{background:var(--navy);}
+.tc{text-align:center;}.tc .sec-sub{margin:0 auto;}
+.btn-more{padding:10px 22px;border:1.5px solid var(--blue);border-radius:7px;background:none;color:var(--blue);font-size:0.81rem;font-weight:600;cursor:pointer;transition:all 0.14s;white-space:nowrap;}
+.btn-more:hover{background:var(--blue);color:white;}
+.success-msg{display:none;background:var(--teal-l);border:1px solid #80CBC4;border-radius:8px;padding:13px;font-size:0.84rem;color:var(--teal);font-weight:500;margin-top:13px;text-align:center;}
+.success-msg.show{display:block;}
+
+/* ── SERVICES GRID ── */
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);}
+.svc-card{background:white;padding:34px 28px;transition:all 0.18s;position:relative;overflow:hidden;cursor:default;}
+.svc-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--blue),var(--teal));transform:scaleX(0);transition:transform 0.2s;transform-origin:left;}
+.svc-card:hover{background:var(--off);}
+.svc-card:hover::after{transform:scaleX(1);}
+.svc-n{font-size:0.68rem;color:var(--muted);letter-spacing:0.1em;margin-bottom:14px;}
+.svc-icon{width:50px;height:50px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.3rem;margin-bottom:18px;}
+.si-b{background:#EBF3FF;}.si-t{background:var(--teal-l);}.si-g{background:var(--gold-l);}
+.svc-card h3{font-family:'Lora',serif;font-size:1.05rem;font-weight:700;color:var(--navy);margin-bottom:9px;line-height:1.3;}
+.stars{display:flex;gap:2px;align-items:center;margin-bottom:10px;}
+.star{color:#FFA726;font-size:0.72rem;}
+.rtext{font-size:0.72rem;color:var(--muted);margin-left:5px;}
+.svc-card p{font-size:0.84rem;color:var(--mid);line-height:1.72;margin-bottom:14px;}
+.svc-lnk{font-size:0.78rem;color:var(--blue);font-weight:600;cursor:pointer;display:inline-flex;align-items:center;gap:4px;}
+.svc-lnk:hover{color:var(--navy);}
+
+/* ── HOW WE HELP ── */
+.hwh-grid{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center;}
+.steps{display:flex;flex-direction:column;}
+.step{display:flex;gap:18px;padding:22px 0;border-bottom:1px solid var(--border);}
+.step:last-child{border-bottom:none;}
+.snum{width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,var(--blue),var(--teal));color:white;display:flex;align-items:center;justify-content:center;font-size:0.78rem;font-weight:700;flex-shrink:0;margin-top:2px;}
+.step h4{font-size:0.93rem;font-weight:600;color:var(--navy);margin-bottom:5px;}
+.step p{font-size:0.83rem;color:var(--mid);line-height:1.7;}
+.hwh-panel{background:var(--navy);border-radius:18px;padding:44px 38px;color:white;}
+.hwh-panel h3{font-family:'Lora',serif;font-size:1.55rem;font-weight:700;margin-bottom:8px;line-height:1.3;}
+.hwh-panel h3 em{color:#80DEEA;font-style:italic;font-weight:400;}
+.hwh-panel p{font-size:0.84rem;color:#90A4AE;line-height:1.82;margin-bottom:26px;}
+.accred-list{display:flex;flex-direction:column;gap:10px;}
+.acc-item{display:flex;align-items:center;gap:11px;background:rgba(255,255,255,0.05);border-radius:8px;padding:11px 15px;border:1px solid rgba(255,255,255,0.07);}
+.acc-ic{font-size:1rem;}
+.acc-txt{font-size:0.81rem;color:#CBD5E1;font-weight:500;}
+
+/* ── TESTIMONIALS ── */
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
+.tcard{background:white;border:1px solid var(--border);border-radius:14px;padding:30px 26px;transition:box-shadow 0.2s;}
+.tcard:hover{box-shadow:var(--shadow);}
+.tcard-stars{display:flex;gap:2px;margin-bottom:14px;}
+.tcard-q{font-family:'Lora',serif;font-size:0.93rem;font-style:italic;color:var(--navy);line-height:1.72;margin-bottom:22px;}
+.tcard-auth{display:flex;align-items:center;gap:11px;}
+.tcard-av{width:42px;height:42px;border-radius:50%;background:var(--bg);display:flex;align-items:center;justify-content:center;font-size:0.82rem;font-weight:700;color:var(--blue);flex-shrink:0;}
+.tcard-name{font-size:0.86rem;font-weight:600;color:var(--navy);}
+.tcard-role{font-size:0.74rem;color:var(--muted);}
+.tcard-v{display:inline-flex;align-items:center;gap:3px;background:var(--teal-l);color:var(--teal);font-size:0.67rem;padding:2px 7px;border-radius:9px;font-weight:700;margin-top:3px;}
+
+/* ── STAFF ── */
+.staff-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;}
+.scard{background:white;border:1px solid var(--border);border-radius:14px;overflow:hidden;transition:box-shadow 0.2s;}
+.scard:hover{box-shadow:var(--shadow);}
+.scard-photo{height:190px;display:flex;align-items:center;justify-content:center;font-size:3.4rem;}
+.sp1{background:linear-gradient(135deg,#EBF3FF,#DCEEFB);}
+.sp2{background:linear-gradient(135deg,#E0F2F1,#CCFBF1);}
+.sp3{background:linear-gradient(135deg,#FFF3E0,#FFF8E1);}
+.sp4{background:linear-gradient(135deg,#EDE9FE,#EBF3FF);}
+.scard-body{padding:18px;}
+.scard-name{font-size:0.93rem;font-weight:700;color:var(--navy);margin-bottom:2px;}
+.scard-title{font-size:0.72rem;color:var(--blue);font-weight:700;text-transform:uppercase;letter-spacing:0.07em;margin-bottom:6px;}
+.scard-cred{font-size:0.73rem;color:var(--muted);margin-bottom:10px;}
+.scard-msg{font-size:0.8rem;color:var(--mid);line-height:1.58;font-style:italic;}
+
+/* ── ABOUT ── */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:start;}
+.about-visual{position:relative;padding-bottom:32px;}
+.about-img{width:100%;aspect-ratio:4/3;background:linear-gradient(135deg,#EBF3FF,#E0F2F1);border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:5.5rem;}
+.about-badge{position:absolute;bottom:0;right:-16px;background:white;border:1px solid var(--border);border-radius:11px;padding:15px 20px;box-shadow:var(--shadow);}
+.ab-num{font-family:'Lora',serif;font-size:1.75rem;font-weight:700;color:var(--navy);line-height:1;}
+.ab-lbl{font-size:0.7rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.07em;}
+.about-content h3{font-family:'Lora',serif;font-size:1.45rem;font-weight:700;color:var(--navy);margin:22px 0 14px;}
+.about-content p{font-size:0.87rem;color:var(--mid);line-height:1.9;margin-bottom:14px;}
+.values-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:20px 0;}
+.val-item{background:var(--bg);border-radius:8px;padding:14px;display:flex;gap:9px;align-items:flex-start;}
+.val-ic{font-size:1rem;margin-top:1px;}
+.val-txt{font-size:0.81rem;font-weight:600;color:var(--navy);}
+.supporters{margin-top:28px;padding-top:28px;border-top:1px solid var(--border);}
+.supporters h4{font-size:0.7rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--muted);margin-bottom:14px;font-weight:700;}
+.sup-logos{display:flex;gap:9px;flex-wrap:wrap;}
+.sup-tag{background:white;border:1px solid var(--border);border-radius:6px;padding:6px 13px;font-size:0.76rem;color:var(--mid);font-weight:500;}
+
+/* ── CONTACT ── */
+.contact-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:56px;}
+.contact-info h3{font-family:'Lora',serif;font-size:1.4rem;font-weight:700;color:var(--navy);margin-bottom:7px;}
+.contact-info>p{font-size:0.87rem;color:var(--mid);margin-bottom:28px;line-height:1.72;}
+.citem{display:flex;gap:13px;margin-bottom:22px;}
+.cic{width:42px;height:42px;background:var(--bg);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.05rem;flex-shrink:0;}
+.citem h4{font-size:0.84rem;font-weight:600;color:var(--navy);margin-bottom:2px;}
+.citem p,.citem a{font-size:0.83rem;color:var(--mid);line-height:1.6;text-decoration:none;}
+.citem a:hover{color:var(--blue);}
+.hrs-grid{display:grid;grid-template-columns:1fr 1fr;gap:4px;margin-top:7px;}
+.hrs-row{font-size:0.76rem;color:var(--mid);}
+.hrs-row span{color:var(--green);font-weight:600;}
+/* SOCIAL SECTION */
+.social-section{margin-top:28px;padding-top:28px;border-top:1px solid var(--border);}
+.social-section h4{font-size:0.7rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--muted);margin-bottom:14px;font-weight:700;}
+.social-row{display:flex;gap:10px;flex-wrap:wrap;}
+.soc-btn{display:inline-flex;align-items:center;gap:8px;padding:9px 16px;border-radius:8px;font-size:0.79rem;font-weight:600;text-decoration:none;transition:opacity 0.14s;border:none;cursor:pointer;}
+.soc-btn:hover{opacity:0.85;}
+.soc-fb{background:#1877F2;color:white;}
+.soc-ig{background:linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);color:white;}
+.soc-tw{background:#000;color:white;}
+.soc-yt{background:#FF0000;color:white;}
+.soc-li{background:#0077B5;color:white;}
+.fcard{background:white;border:1px solid var(--border);border-radius:14px;padding:34px;}
+.fcard h3{font-family:'Lora',serif;font-size:1.15rem;font-weight:700;color:var(--navy);margin-bottom:5px;}
+.fcard>p{font-size:0.81rem;color:var(--muted);margin-bottom:22px;}
+.fg{margin-bottom:16px;}
+.fg label{display:block;font-size:0.74rem;font-weight:700;color:var(--navy);margin-bottom:5px;letter-spacing:0.02em;}
+.fg input,.fg textarea,.fg select{width:100%;padding:10px 13px;border:1.5px solid var(--border);border-radius:8px;font-family:'Plus Jakarta Sans',sans-serif;font-size:0.87rem;color:var(--text);outline:none;transition:border 0.14s;background:var(--off);}
+.fg input:focus,.fg textarea:focus,.fg select:focus{border-color:var(--blue);background:white;}
+.fg textarea{resize:vertical;min-height:105px;}
+.frow{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.fsub{width:100%;padding:12px;background:linear-gradient(135deg,var(--blue),var(--teal));color:white;border:none;border-radius:8px;font-size:0.88rem;font-weight:700;cursor:pointer;transition:opacity 0.14s;}
+.fsub:hover{opacity:0.9;}
+
+/* ── MAP ── */
+.map-wrap{padding:0 6% 80px;}
+.map-in{max-width:1300px;margin:0 auto;}
+.map-card{border-radius:14px;overflow:hidden;border:1px solid var(--border);}
+.map-frame{width:100%;height:360px;background:linear-gradient(135deg,#E8F5E9,#E3F2FD);display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative;}
+.map-frame::before{content:'';position:absolute;inset:0;background-image:repeating-linear-gradient(0deg,transparent,transparent 39px,rgba(0,0,0,0.04) 40px),repeating-linear-gradient(90deg,transparent,transparent 39px,rgba(0,0,0,0.04) 40px);}
+.map-pin-wrap{display:flex;flex-direction:column;align-items:center;gap:10px;position:relative;z-index:1;}
+.map-pin{width:50px;height:50px;background:var(--blue);border-radius:50% 50% 50% 0;transform:rotate(-45deg);display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(0,0,0,0.2);}
+.map-pin span{transform:rotate(45deg);display:block;font-size:1.2rem;}
+.map-lbl{background:white;border-radius:10px;padding:12px 22px;box-shadow:var(--shadow);text-align:center;}
+.map-lbl strong{display:block;font-size:0.92rem;color:var(--navy);}
+.map-lbl span{font-size:0.76rem;color:var(--muted);}
+
+/* ── SCHEDULE ── */
+.sch-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:56px;align-items:start;}
+.sch-left h2{font-family:'Lora',serif;font-size:1.75rem;font-weight:700;color:var(--navy);margin-bottom:12px;line-height:1.3;}
+.sch-left p{font-size:0.88rem;color:var(--mid);line-height:1.82;margin-bottom:22px;}
+.sch-feats{display:flex;flex-direction:column;gap:11px;}
+.sf{display:flex;align-items:center;gap:9px;font-size:0.84rem;color:var(--mid);}
+.sfck{width:20px;height:20px;border-radius:50%;background:var(--teal-l);display:flex;align-items:center;justify-content:center;font-size:0.64rem;color:var(--teal);font-weight:700;flex-shrink:0;}
+.ts-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;margin-top:9px;}
+.tslot{padding:9px 5px;text-align:center;border:1.5px solid var(--border);border-radius:6px;font-size:0.77rem;cursor:pointer;transition:all 0.12s;color:var(--mid);font-weight:500;}
+.tslot:hover,.tslot.sel{background:var(--blue);color:white;border-color:var(--blue);}
+.tslot.na{background:var(--bg);color:var(--muted);cursor:not-allowed;text-decoration:line-through;}
+
+/* ── PATIENT PORTAL ── */
+.portal-tabs{display:flex;gap:0;border-bottom:2px solid var(--border);margin-bottom:28px;}
+.ptab{padding:11px 22px;font-size:0.83rem;font-weight:600;color:var(--muted);cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-2px;transition:all 0.14s;}
+.ptab.active,.ptab:hover{color:var(--blue);border-bottom-color:var(--blue);}
+.p-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;}
+.pcard{background:white;border:1px solid var(--border);border-radius:12px;padding:26px;}
+.pcard h3{font-size:0.93rem;font-weight:700;color:var(--navy);margin-bottom:5px;}
+.pcard>p{font-size:0.81rem;color:var(--muted);margin-bottom:18px;}
+.rtbl{width:100%;border-collapse:collapse;}
+.rtbl th{font-size:0.7rem;text-transform:uppercase;letter-spacing:0.07em;color:var(--muted);padding:7px 0;border-bottom:1px solid var(--border);text-align:left;font-weight:700;}
+.rtbl td{font-size:0.82rem;color:var(--mid);padding:9px 0;border-bottom:1px solid var(--border);}
+.rtbl tr:last-child td{border-bottom:none;}
+.bn{background:#DCFCE7;color:#15803D;padding:2px 8px;border-radius:4px;font-size:0.69rem;font-weight:700;}
+.br{background:#FEF9C3;color:#A16207;padding:2px 8px;border-radius:4px;font-size:0.69rem;font-weight:700;}
+.bp{background:#EBF3FF;color:var(--blue);padding:2px 8px;border-radius:4px;font-size:0.69rem;font-weight:700;}
+
+/* ── CAREERS ── */
+.car-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
+.jcard{background:white;border:1.5px solid var(--border);border-radius:12px;padding:26px;transition:border-color 0.14s,box-shadow 0.14s;cursor:pointer;}
+.jcard:hover{border-color:var(--blue);box-shadow:0 4px 20px rgba(21,101,192,0.1);}
+.jtag{display:inline-block;padding:3px 9px;border-radius:4px;font-size:0.69rem;font-weight:700;letter-spacing:0.05em;text-transform:uppercase;margin-bottom:12px;}
+.jt-ft{background:#EBF3FF;color:var(--blue);}
+.jt-pt{background:var(--gold-l);color:var(--gold);}
+.jt-co{background:var(--teal-l);color:var(--teal);}
+.jcard h3{font-size:0.98rem;font-weight:700;color:var(--navy);margin-bottom:7px;}
+.jcard p{font-size:0.82rem;color:var(--mid);line-height:1.68;margin-bottom:14px;}
+.jmeta{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:14px;}
+.jmeta span{font-size:0.73rem;color:var(--muted);display:flex;align-items:center;gap:3px;}
+.btn-apply{background:var(--blue);color:white;border:none;border-radius:6px;padding:9px 18px;font-size:0.8rem;font-weight:700;cursor:pointer;transition:background 0.14s;}
+.btn-apply:hover{background:var(--navy);}
+
+/* ── FAQ ── */
+.faq-wrap{max-width:800px;margin:0 auto;}
+.faq-item{border:1px solid var(--border);border-radius:10px;margin-bottom:9px;overflow:hidden;}
+.faq-q{width:100%;background:white;border:none;text-align:left;padding:17px 20px;font-family:'Plus Jakarta Sans',sans-serif;font-size:0.88rem;color:var(--navy);cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-weight:600;transition:background 0.12s;}
+.faq-q:hover{background:var(--bg);}
+.faq-q.open{background:#EBF3FF;}
+.faq-ic{width:22px;height:22px;border-radius:50%;background:var(--bg);display:flex;align-items:center;justify-content:center;font-size:0.73rem;color:var(--blue);font-weight:700;flex-shrink:0;transition:transform 0.2s;}
+.faq-q.open .faq-ic{transform:rotate(45deg);background:var(--blue);color:white;}
+.faq-a{display:none;padding:0 20px 18px;font-size:0.85rem;color:var(--mid);line-height:1.82;background:#EBF3FF;}
+.faq-a.open{display:block;}
+
+/* ── GALLERY ── */
+.gal-filters{display:flex;gap:7px;margin-bottom:28px;flex-wrap:wrap;}
+.gal-btn{padding:6px 16px;border:1.5px solid var(--border);border-radius:20px;background:white;font-size:0.77rem;font-weight:600;cursor:pointer;color:var(--mid);transition:all 0.12s;}
+.gal-btn.active,.gal-btn:hover{background:var(--blue);color:white;border-color:var(--blue);}
+.gal-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;}
+.gitem{border-radius:10px;overflow:hidden;aspect-ratio:1;display:flex;align-items:center;justify-content:center;font-size:2.2rem;cursor:pointer;position:relative;transition:transform 0.18s;}
+.gitem:hover{transform:scale(0.97);}
+.g1{background:linear-gradient(135deg,#DBEAFE,#BFDBFE);}
+.g2{background:linear-gradient(135deg,#D1FAE5,#A7F3D0);}
+.g3{background:linear-gradient(135deg,#FEF3C7,#FDE68A);}
+.g4{background:linear-gradient(135deg,#FCE7F3,#FBCFE8);}
+.g5{background:linear-gradient(135deg,#EDE9FE,#DDD6FE);}
+.g6{background:linear-gradient(135deg,#CCFBF1,#99F6E4);}
+.gcap{position:absolute;bottom:0;left:0;right:0;background:rgba(11,37,69,0.72);color:white;font-size:0.7rem;padding:7px;text-align:center;font-weight:500;}
+
+/* ── VIDEOS ── */
+.vid-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
+.vcard{border-radius:12px;overflow:hidden;border:1px solid var(--border);cursor:pointer;transition:box-shadow 0.18s;}
+.vcard:hover{box-shadow:var(--shadow);}
+.vthumb{aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;position:relative;}
+.vt1{background:linear-gradient(135deg,#0B2545,#1565C0);}
+.vt2{background:linear-gradient(135deg,#00796B,#0B2545);}
+.vt3{background:linear-gradient(135deg,#1565C0,#00796B);}
+.vt4{background:linear-gradient(135deg,#F57C00,#0B2545);}
+.vt5{background:linear-gradient(135deg,#163A6E,#00796B);}
+.vt6{background:linear-gradient(135deg,#0B2545,#F57C00);}
+.vplay{width:50px;height:50px;border-radius:50%;background:rgba(255,255,255,0.18);backdrop-filter:blur(4px);display:flex;align-items:center;justify-content:center;border:2px solid rgba(255,255,255,0.35);}
+.vplay-tri{width:0;height:0;border-style:solid;border-width:8px 0 8px 14px;border-color:transparent transparent transparent white;margin-left:3px;}
+.vbody{padding:15px 17px;background:white;}
+.vcat{font-size:0.68rem;color:var(--blue);font-weight:700;text-transform:uppercase;letter-spacing:0.07em;margin-bottom:4px;}
+.vtitle{font-size:0.87rem;font-weight:600;color:var(--navy);margin-bottom:4px;line-height:1.3;}
+.vdur{font-size:0.73rem;color:var(--muted);}
+
+/* ── NEWS ── */
+.news-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:22px;}
+.ncard{border:1px solid var(--border);border-radius:12px;overflow:hidden;background:white;transition:box-shadow 0.18s;}
+.ncard:hover{box-shadow:var(--shadow);}
+.nimg{display:flex;align-items:center;justify-content:center;font-size:2.4rem;}
+.ni-lg{height:210px;}.ni-sm{height:120px;}
+.ni1{background:linear-gradient(135deg,#EBF3FF,#BFDBFE);}
+.ni2{background:linear-gradient(135deg,#E0F2F1,#99F6E4);}
+.ni3{background:linear-gradient(135deg,#FFF3E0,#FDE68A);}
+.ni4{background:linear-gradient(135deg,#EDE9FE,#DDD6FE);}
+.ni5{background:linear-gradient(135deg,#FCE7F3,#FBCFE8);}
+.nbody{padding:17px 19px;}
+.ncat{font-size:0.69rem;color:var(--blue);font-weight:700;text-transform:uppercase;letter-spacing:0.07em;margin-bottom:5px;}
+.ntitle{font-family:'Lora',serif;font-size:0.98rem;font-weight:700;color:var(--navy);margin-bottom:7px;line-height:1.33;}
+.nfeat .ntitle{font-size:1.3rem;}
+.nexcerpt{font-size:0.8rem;color:var(--mid);line-height:1.58;margin-bottom:11px;}
+.nmeta{font-size:0.72rem;color:var(--muted);display:flex;gap:10px;align-items:center;}
+.nmeta a{color:var(--blue);text-decoration:none;font-weight:600;}
+
+/* ── PARTNERS ── */
+.part-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-bottom:44px;}
+.pcard2{background:white;border:1px solid var(--border);border-radius:12px;padding:26px 18px;text-align:center;transition:box-shadow 0.18s;}
+.pcard2:hover{box-shadow:var(--shadow);}
+.plogo{width:58px;height:58px;border-radius:12px;margin:0 auto 13px;display:flex;align-items:center;justify-content:center;font-size:1.5rem;}
+.pl-b{background:#EBF3FF;}.pl-t{background:var(--teal-l);}.pl-g{background:var(--gold-l);}
+.pname{font-size:0.88rem;font-weight:700;color:var(--navy);margin-bottom:4px;}
+.ptype{font-size:0.7rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.07em;margin-bottom:7px;}
+.pdesc{font-size:0.78rem;color:var(--mid);line-height:1.5;}
+
+/* ── PAYMENT ── */
+.pay-opts{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:26px;}
+.popt{border:2px solid var(--border);border-radius:10px;padding:18px;text-align:center;cursor:pointer;transition:all 0.13s;}
+.popt:hover,.popt.sel{border-color:var(--blue);background:#EBF3FF;}
+.popt-ic{font-size:1.9rem;margin-bottom:7px;}
+.popt-name{font-size:0.83rem;font-weight:700;color:var(--navy);}
+.popt-sub{font-size:0.72rem;color:var(--muted);margin-top:2px;}
+
+/* ── FEEDBACK ── */
+.stars-inp{display:flex;gap:5px;margin-bottom:18px;}
+.star-b{background:none;border:none;font-size:1.9rem;cursor:pointer;color:#DDD;transition:color 0.1s;line-height:1;}
+.star-b.lit{color:#FFA726;}
+
+/* ── FORUM ── */
+.forum-layout{display:grid;grid-template-columns:1fr 290px;gap:28px;}
+.fpost{background:white;border:1px solid var(--border);border-radius:10px;padding:20px;margin-bottom:13px;transition:box-shadow 0.14s;}
+.fpost:hover{box-shadow:var(--shadow);}
+.fpt{display:flex;align-items:flex-start;gap:11px;margin-bottom:9px;}
+.fpav{width:36px;height:36px;border-radius:50%;background:#EBF3FF;display:flex;align-items:center;justify-content:center;font-size:0.8rem;font-weight:700;color:var(--blue);flex-shrink:0;}
+.fpname{font-size:0.86rem;font-weight:700;color:var(--navy);}
+.fptime{font-size:0.72rem;color:var(--muted);}
+.fptitle{font-size:0.91rem;font-weight:600;color:var(--navy);margin-bottom:6px;}
+.fpbody{font-size:0.82rem;color:var(--mid);line-height:1.58;margin-bottom:11px;}
+.fpacts{display:flex;gap:14px;}
+.fpact{font-size:0.76rem;color:var(--muted);cursor:pointer;display:flex;align-items:center;gap:3px;transition:color 0.12s;}
+.fpact:hover{color:var(--blue);}
+.sidebar-card{background:white;border:1px solid var(--border);border-radius:10px;padding:18px;margin-bottom:14px;}
+.sc-title{font-size:0.78rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--navy);margin-bottom:13px;}
+.ask-ta{width:100%;padding:10px 12px;border:1.5px solid var(--border);border-radius:7px;font-family:'Plus Jakarta Sans',sans-serif;font-size:0.82rem;resize:none;min-height:88px;outline:none;margin-bottom:9px;}
+.ask-ta:focus{border-color:var(--blue);}
+.btn-post{width:100%;padding:9px;background:var(--blue);color:white;border:none;border-radius:6px;font-size:0.82rem;font-weight:700;cursor:pointer;}
+.btn-post:hover{background:var(--navy);}
+
+/* ── TERMS ── */
+.terms-wrap{max-width:800px;}
+.terms-wrap h3{font-family:'Lora',serif;font-size:1.05rem;font-weight:700;color:var(--navy);margin:28px 0 11px;padding-top:8px;border-top:1px solid var(--border);}
+.terms-wrap h3:first-child{border-top:none;margin-top:0;}
+.terms-wrap p{font-size:0.86rem;color:var(--mid);line-height:1.9;margin-bottom:12px;}
+.terms-wrap ul{list-style:none;padding:0;margin-bottom:12px;}
+.terms-wrap ul li{font-size:0.86rem;color:var(--mid);line-height:1.8;padding:4px 0 4px 18px;position:relative;}
+.terms-wrap ul li::before{content:'→';position:absolute;left:0;color:var(--blue);font-size:0.78rem;}
+
+/* ── LIVE CHAT ── */
+.chat-layout{display:grid;grid-template-columns:1fr 1fr;gap:52px;align-items:start;}
+.chat-win{border:1px solid var(--border);border-radius:14px;overflow:hidden;box-shadow:var(--shadow);}
+.chat-hdr{background:var(--navy);padding:15px 19px;display:flex;align-items:center;gap:11px;}
+.chat-hav{width:36px;height:36px;border-radius:50%;background:var(--blue);display:flex;align-items:center;justify-content:center;font-size:0.95rem;}
+.chat-hname{color:white;font-size:0.88rem;font-weight:600;}
+.chat-hst{color:#90A4AE;font-size:0.71rem;}
+.chat-online-dot{width:7px;height:7px;border-radius:50%;background:#4CAF50;display:inline-block;margin-right:4px;}
+.chat-msgs{padding:18px;height:290px;overflow-y:auto;display:flex;flex-direction:column;gap:12px;background:var(--bg);}
+.cmsg{display:flex;flex-direction:column;max-width:82%;}
+.cmsg.agent{align-self:flex-start;}
+.cmsg.usr{align-self:flex-end;}
+.cbubble{padding:10px 14px;border-radius:12px;font-size:0.82rem;line-height:1.5;}
+.cmsg.agent .cbubble{background:white;color:var(--text);border:1px solid var(--border);border-bottom-left-radius:2px;}
+.cmsg.usr .cbubble{background:var(--blue);color:white;border-bottom-right-radius:2px;}
+.ctime{font-size:0.67rem;color:var(--muted);margin-top:3px;padding:0 3px;}
+.cmsg.usr .ctime{text-align:right;}
+.chat-inp-bar{display:flex;border-top:1px solid var(--border);background:white;}
+.chat-inp{flex:1;padding:13px 15px;border:none;font-family:'Plus Jakarta Sans',sans-serif;font-size:0.85rem;outline:none;color:var(--text);}
+.chat-send{background:var(--blue);color:white;border:none;padding:13px 18px;cursor:pointer;font-size:0.83rem;font-weight:700;transition:background 0.14s;}
+.chat-send:hover{background:var(--navy);}
+
+/* ── SUPPORT STRIP ── */
+.support-strip{background:linear-gradient(90deg,var(--teal),var(--blue));padding:15px 6%;text-align:center;}
+.support-strip p{font-size:0.87rem;color:white;font-weight:500;}
+.support-strip a{color:#A7F3D0;font-weight:700;text-decoration:none;}
+
+/* ── FOOTER ── */
+footer{background:var(--navy);color:white;padding:68px 6% 34px;}
+.foot-in{max-width:1300px;margin:0 auto;}
+.foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:52px;margin-bottom:52px;}
+.foot-brand{}
+.foot-logo{display:flex;align-items:center;gap:9px;margin-bottom:16px;}
+.foot-logo-ic{width:34px;height:34px;background:linear-gradient(135deg,var(--blue),var(--teal));border-radius:7px;display:flex;align-items:center;justify-content:center;}
+.foot-logo-ic svg{width:16px;height:16px;fill:white;}
+.foot-logo-name{font-family:'Lora',serif;font-size:0.98rem;font-weight:700;color:white;}
+.foot-brand p{font-size:0.81rem;color:#90A4AE;line-height:1.82;max-width:270px;margin-bottom:18px;}
+.foot-social{display:flex;gap:8px;margin-bottom:16px;}
+.fsoc{width:32px;height:32px;border-radius:6px;border:1px solid #2A3F5F;display:flex;align-items:center;justify-content:center;text-decoration:none;font-size:0.76rem;font-weight:700;transition:all 0.14s;color:#90A4AE;}
+.fsoc:hover{color:white;}
+.fsoc-fb{}.fsoc-fb:hover{background:#1877F2;border-color:#1877F2;}
+.fsoc-ig:hover{background:linear-gradient(45deg,#f09433,#dc2743,#bc1888);border-color:#dc2743;}
+.fsoc-tw:hover{background:#000;border-color:#000;}
+.fsoc-yt:hover{background:#FF0000;border-color:#FF0000;}
+.foot-accred{display:flex;gap:8px;flex-wrap:wrap;}
+.facc{background:#1A3456;border:1px solid #2A4A6F;border-radius:5px;padding:5px 10px;font-size:0.7rem;color:#90A4AE;}
+.foot-col h4{font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:#CBD5E1;margin-bottom:16px;}
+.foot-col ul{list-style:none;}
+.foot-col ul li{margin-bottom:8px;}
+.foot-col ul li a{font-size:0.81rem;color:#90A4AE;text-decoration:none;transition:color 0.14s;cursor:pointer;}
+.foot-col ul li a:hover{color:white;}
+.foot-bot{border-top:1px solid #1A3456;padding-top:28px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;}
+.foot-bot p{font-size:0.75rem;color:#4A6280;}
+.foot-bot-links{display:flex;gap:18px;}
+.foot-bot-links a{font-size:0.75rem;color:#4A6280;text-decoration:none;cursor:pointer;}
+.foot-bot-links a:hover{color:white;}
+
+/* ── MOBILE ── */
+@media(max-width:960px){
+  .nav-menu{display:none;}.hburg{display:flex;}
+  .hero-grid{grid-template-columns:1fr;gap:40px;}
+  .hero-visual{display:none;}
+  .svc-grid{grid-template-columns:1fr 1fr;}
+  .hwh-grid,.about-grid,.contact-grid,.sch-grid,.p-grid,.chat-layout,.forum-layout{grid-template-columns:1fr;}
+  .testi-grid,.staff-grid,.part-grid{grid-template-columns:1fr 1fr;}
+  .news-grid,.car-grid{grid-template-columns:1fr;}
+  .gal-grid,.vid-grid{grid-template-columns:1fr 1fr;}
+  .pay-opts{grid-template-columns:1fr 1fr;}
+  .foot-grid{grid-template-columns:1fr 1fr;}
+}
+@media(max-width:600px){
+  .svc-grid,.testi-grid,.staff-grid,.part-grid,.vid-grid{grid-template-columns:1fr;}
+  .hero-stats{flex-wrap:wrap;gap:18px;}
+  .sec{padding:52px 4%;}
+  .topbar-left{display:none;}
+}
+</style>
+</head>
+<body>
+
+<!-- VIDEO MODAL -->
+<div class="vid-modal" id="vidModal" onclick="closeVidModal(event)">
+  <div class="vid-inner">
+    <button class="vid-close" onclick="closeVideoModal()">✕</button>
+    <div class="vid-player">
+      <div class="vid-screen">
+        <div class="vid-logo-big">Manzanita<br/><span>Health Care</span></div>
+        <div class="vid-tagline">Compassionate, professional home health care for elderly patients across the San Francisco Bay Area — trusted since 2010.</div>
+        <div class="vid-controls">
+          <div class="vid-btn" id="vidPlayBtn" onclick="toggleVideo()">
+            <div class="vid-play-tri" id="vidPlayIcon"></div>
+          </div>
+        </div>
+        <div class="vid-progress">
+          <div class="vid-bar"><div class="vid-fill" id="vidFill"></div></div>
+          <div class="vid-time" id="vidTime">0:00 / 3:24</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SEARCH MODAL -->
+<div class="srch-modal" id="srchModal" onclick="closeSrchModal(event)">
+  <div class="srch-box">
+    <button class="srch-close" onclick="toggleSearch()">✕</button>
+    <h3>Search Manzanita Health Care</h3>
+    <div class="srch-row">
+      <input type="text" id="srchInput" placeholder="Search services, staff, appointments…"/>
+      <button onclick="doSearch()">Search</button>
+    </div>
+    <div class="srch-tags">
+      <span class="srch-tag" onclick="nav('services');toggleSearch()">Services</span>
+      <span class="srch-tag" onclick="nav('staff');toggleSearch()">Our Staff</span>
+      <span class="srch-tag" onclick="nav('schedule');toggleSearch()">Book a Visit</span>
+      <span class="srch-tag" onclick="nav('faq');toggleSearch()">FAQ</span>
+      <span class="srch-tag" onclick="nav('contact');toggleSearch()">Contact</span>
+      <span class="srch-tag" onclick="nav('portal');toggleSearch()">Patient Portal</span>
+      <span class="srch-tag" onclick="nav('news');toggleSearch()">News</span>
+      <span class="srch-tag" onclick="nav('careers');toggleSearch()">Careers</span>
+    </div>
+  </div>
+</div>
+
+<!-- TOP BAR -->
+<div class="topbar">
+  <div class="topbar-left">
+    <a href="tel:4158234400">📞 (415) 823-4400</a>
+    <a href="mailto:care@manzanitahealth.com">✉️ care@manzanitahealth.com</a>
+    <span>🕐 Mon–Sat 7am–8pm · Sun 9am–5pm</span>
+  </div>
+  <div class="topbar-right">
+    <div class="topbar-social">
+      <a class="tsoc tsoc-fb" href="#" title="Facebook">f</a>
+      <a class="tsoc tsoc-ig" href="#" title="Instagram">▣</a>
+      <a class="tsoc tsoc-tw" href="#" title="Twitter/X">𝕏</a>
+      <a class="tsoc tsoc-yt" href="#" title="YouTube">▶</a>
+    </div>
+    <span class="topbar-pill">24/7 Support Line</span>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <div class="logo" onclick="nav('home')">
+      <div class="logo-mark">
+        <svg viewBox="0 0 24 24"><path d="M12 21.593c-5.63-5.539-11-10.297-11-14.402 0-3.791 3.068-5.191 5.281-5.191 1.312 0 4.151.501 5.719 4.457 1.59-3.968 4.464-4.447 5.726-4.447 2.54 0 5.274 1.621 5.274 5.181 0 4.069-5.136 8.625-11 14.402z"/></svg>
+      </div>
+      <div class="logo-words">
+        <span class="logo-name">Manzanita Health Care</span>
+        <span class="logo-sub">San Francisco Bay Area</span>
+      </div>
+    </div>
+    <ul class="nav-menu">
+      <li><a onclick="nav('home')">Home</a></li>
+      <li>
+        <a>About <span class="ch">▾</span></a>
+        <div class="dd">
+          <a onclick="nav('about')"><div class="dd-ic ic-b">🏢</div>Our Story</a>
+          <a onclick="nav('staff')"><div class="dd-ic ic-t">👥</div>Our Staff</a>
+          <a onclick="nav('howwehelp')"><div class="dd-ic ic-b">🤝</div>How We Help</a>
+          <a onclick="nav('partnerships')"><div class="dd-ic ic-g">🤝</div>Partnerships</a>
+          <a onclick="nav('testimonials')"><div class="dd-ic ic-t">💬</div>Testimonials</a>
+        </div>
+      </li>
+      <li>
+        <a>Services <span class="ch">▾</span></a>
+        <div class="dd">
+          <a onclick="nav('services')"><div class="dd-ic ic-b">🏥</div>All Services</a>
+          <div class="dd-div"></div>
+          <a onclick="nav('services')"><div class="dd-ic ic-t">🔄</div>Transitional Care</a>
+          <a onclick="nav('services')"><div class="dd-ic ic-t">🧼</div>Personal Hygiene</a>
+          <a onclick="nav('services')"><div class="dd-ic ic-t">👫</div>Companionship</a>
+          <a onclick="nav('services')"><div class="dd-ic ic-t">💊</div>Medicines Delivery</a>
+          <a onclick="nav('services')"><div class="dd-ic ic-t">🍽️</div>Meal Preparation</a>
+          <a onclick="nav('services')"><div class="dd-ic ic-b">📱</div>Telehealth Care</a>
+          <a onclick="nav('services')"><div class="dd-ic ic-g">🎁</div>Gift Services</a>
+        </div>
+      </li>
+      <li>
+        <a>Patient <span class="ch">▾</span></a>
+        <div class="dd">
+          <a onclick="nav('portal')"><div class="dd-ic ic-b">👤</div>My Account</a>
+          <a onclick="nav('portal')"><div class="dd-ic ic-t">🧪</div>Test Results</a>
+          <a onclick="nav('schedule')"><div class="dd-ic ic-b">📅</div>Schedule Service</a>
+          <a onclick="nav('payment')"><div class="dd-ic ic-g">💳</div>Payment</a>
+          <a onclick="nav('feedback')"><div class="dd-ic ic-t">⭐</div>Feedback</a>
+        </div>
+      </li>
+      <li>
+        <a>Community <span class="ch">▾</span></a>
+        <div class="dd">
+          <a onclick="nav('forum')"><div class="dd-ic ic-b">💬</div>Forum</a>
+          <a onclick="nav('news')"><div class="dd-ic ic-t">📰</div>News</a>
+          <a onclick="nav('gallery')"><div class="dd-ic ic-g">🖼️</div>Photo Gallery</a>
+          <a onclick="nav('videos')"><div class="dd-ic ic-b">🎥</div>Videos</a>
+        </div>
+      </li>
+      <li><a onclick="nav('careers')">Careers</a></li>
+      <li><a onclick="nav('contact')">Contact</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="btn-srch" onclick="toggleSearch()">🔍 Search</button>
+      <button class="btn-login" onclick="nav('portal')">Patient Login</button>
+      <button class="btn-book" onclick="nav('schedule')">Book a Visit</button>
+    </div>
+    <button class="hburg" onclick="toggleMobile()"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<!-- ==================== HOME ==================== -->
+<div class="page active" id="page-home">
+  <div class="alert-strip"><div class="alert-strip-in"><span>🟢</span><p><strong>Now accepting new patients across the Bay Area.</strong> Same-week appointments available. <a onclick="nav('schedule')">Schedule your free consultation →</a></p></div></div>
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-grid">
+      <div>
+        <div class="hero-eyebrow"><div class="hero-dot"></div><span>Accepting patients — Bay Area, CA</span></div>
+        <h1>Trusted Home Health<br/>Care for <em>Your Family</em></h1>
+        <p class="hero-desc">Manzanita Health Care delivers certified, compassionate home health services for elderly and recovering patients across the San Francisco Bay Area. Flexible scheduling, background-checked caregivers, and 24/7 support.</p>
+        <div class="hero-btns">
+          <button class="btn-hero-p" onclick="nav('schedule')">📅 Book a Free Visit</button>
+          <button class="btn-hero-s" onclick="nav('services')">🏥 Our Services</button>
+          <button class="btn-vid" onclick="openVideoModal()">
+            <div class="vid-circle"><div class="vid-tri"></div></div>
+            <span>Watch Welcome Video</span>
+          </button>
+        </div>
+        <div class="hero-stats">
+          <div><div class="hstat-num">15+</div><div class="hstat-lbl">Years Serving Bay Area</div></div>
+          <div><div class="hstat-num">2,400+</div><div class="hstat-lbl">Patients Served</div></div>
+          <div><div class="hstat-num">98%</div><div class="hstat-lbl">Satisfaction Rate</div></div>
+          <div><div class="hstat-num">50+</div><div class="hstat-lbl">Certified Caregivers</div></div>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <!-- SVG Healthcare Illustration -->
+        <div class="hero-illustration">
+          <svg class="hero-svg-wrap" viewBox="0 0 480 360" xmlns="http://www.w3.org/2000/svg">
+            <!-- Background -->
+            <rect width="480" height="360" fill="none"/>
+            <!-- House shape -->
+            <polygon points="240,30 120,120 360,120" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.15)" stroke-width="1.5"/>
+            <rect x="120" y="118" width="240" height="180" rx="4" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.12)" stroke-width="1.5"/>
+            <!-- Door -->
+            <rect x="205" y="220" width="70" height="78" rx="4" fill="rgba(0,150,136,0.3)" stroke="rgba(0,150,136,0.5)" stroke-width="1.5"/>
+            <circle cx="265" cy="260" r="4" fill="rgba(255,255,255,0.6)"/>
+            <!-- Windows -->
+            <rect x="135" y="150" width="55" height="50" rx="3" fill="rgba(33,150,243,0.2)" stroke="rgba(33,150,243,0.4)" stroke-width="1.5"/>
+            <line x1="162" y1="150" x2="162" y2="200" stroke="rgba(33,150,243,0.4)" stroke-width="1"/>
+            <line x1="135" y1="175" x2="190" y2="175" stroke="rgba(33,150,243,0.4)" stroke-width="1"/>
+            <rect x="290" y="150" width="55" height="50" rx="3" fill="rgba(33,150,243,0.2)" stroke="rgba(33,150,243,0.4)" stroke-width="1.5"/>
+            <line x1="317" y1="150" x2="317" y2="200" stroke="rgba(33,150,243,0.4)" stroke-width="1"/>
+            <line x1="290" y1="175" x2="345" y2="175" stroke="rgba(33,150,243,0.4)" stroke-width="1"/>
+            <!-- Medical cross on roof -->
+            <rect x="230" y="60" width="20" height="40" rx="3" fill="rgba(0,188,212,0.7)"/>
+            <rect x="215" y="75" width="50" height="20" rx="3" fill="rgba(0,188,212,0.7)"/>
+            <!-- Caregiver figure -->
+            <circle cx="380" cy="200" r="18" fill="rgba(255,255,255,0.15)" stroke="rgba(255,255,255,0.3)" stroke-width="1.5"/>
+            <text x="380" y="207" text-anchor="middle" font-size="16" fill="white">👩‍⚕️</text>
+            <!-- Patient figure -->
+            <circle cx="100" cy="230" r="18" fill="rgba(255,255,255,0.1)" stroke="rgba(255,255,255,0.2)" stroke-width="1.5"/>
+            <text x="100" y="237" text-anchor="middle" font-size="14" fill="white">👴</text>
+            <!-- Heart pulse line -->
+            <polyline points="30,320 60,320 75,300 90,340 105,310 120,320 150,320" fill="none" stroke="rgba(0,188,212,0.7)" stroke-width="2.5" stroke-linecap="round"/>
+            <!-- Stars/sparkles -->
+            <circle cx="410" cy="60" r="3" fill="rgba(255,255,255,0.4)"/>
+            <circle cx="430" cy="90" r="2" fill="rgba(0,188,212,0.5)"/>
+            <circle cx="50" cy="80" r="2.5" fill="rgba(255,255,255,0.35)"/>
+            <circle cx="70" cy="50" r="2" fill="rgba(0,188,212,0.4)"/>
+            <!-- Caregiver reaching to patient -->
+            <line x1="118" y1="230" x2="362" y2="210" stroke="rgba(0,188,212,0.3)" stroke-width="1.5" stroke-dasharray="6,4"/>
+            <!-- Bottom path/ground -->
+            <ellipse cx="240" cy="300" rx="160" ry="8" fill="rgba(255,255,255,0.04)"/>
+            <!-- Accred badge -->
+            <rect x="380" y="280" width="80" height="36" rx="8" fill="rgba(0,150,136,0.25)" stroke="rgba(0,150,136,0.4)" stroke-width="1"/>
+            <text x="420" y="296" text-anchor="middle" font-size="8" fill="rgba(255,255,255,0.8)" font-weight="bold">JOINT</text>
+            <text x="420" y="308" text-anchor="middle" font-size="8" fill="rgba(255,255,255,0.6)">ACCREDITED</text>
+            <!-- Tree (manzanita) left side -->
+            <line x1="40" y1="340" x2="40" y2="240" stroke="rgba(139,90,43,0.5)" stroke-width="3"/>
+            <line x1="40" y1="290" x2="20" y2="260" stroke="rgba(139,90,43,0.4)" stroke-width="2"/>
+            <line x1="40" y1="270" x2="60" y2="248" stroke="rgba(139,90,43,0.4)" stroke-width="2"/>
+            <circle cx="16" cy="252" r="12" fill="rgba(0,150,136,0.25)" stroke="rgba(0,150,136,0.4)" stroke-width="1"/>
+            <circle cx="64" cy="241" r="10" fill="rgba(0,150,136,0.2)" stroke="rgba(0,150,136,0.35)" stroke-width="1"/>
+            <circle cx="38" cy="232" r="14" fill="rgba(0,150,136,0.2)" stroke="rgba(0,150,136,0.35)" stroke-width="1"/>
+          </svg>
+        </div>
+        <div class="hero-cards-row">
+          <div class="hcard">
+            <div class="hcard-top"><div class="hcard-icon hci-t">🔄</div><div><div class="hcard-title">Transitional Care</div><div class="hcard-sub">Hospital → Home</div></div></div>
+            <div class="hcard-body">Expert recovery support, same-week start.</div>
+            <div class="hcard-badge">★ 4.9 Rated</div>
+          </div>
+          <div class="hcard">
+            <div class="hcard-top"><div class="hcard-icon hci-b">📅</div><div><div class="hcard-title">Easy Scheduling</div><div class="hcard-sub">Online 24/7</div></div></div>
+            <div class="hcard-body">Same-week availability across Bay Area.</div>
+            <div class="hcard-badge">Book in 2 min</div>
+          </div>
+          <div class="hcard">
+            <div class="hcard-top"><div class="hcard-icon hci-gr">🛡️</div><div><div class="hcard-title">Fully Accredited</div><div class="hcard-sub">Joint Commission</div></div></div>
+            <div class="hcard-body">Medicare & Medi-Cal certified agency.</div>
+            <div class="hcard-badge">CA DHCS Licensed</div>
+          </div>
+          <div class="hcard">
+            <div class="hcard-top"><div class="hcard-icon hci-g">📱</div><div><div class="hcard-title">Telehealth</div><div class="hcard-sub">Video Consults</div></div></div>
+            <div class="hcard-body">HIPAA-compliant video visits with RNs.</div>
+            <div class="hcard-badge">HIPAA Compliant</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Services Preview -->
+  <section class="sec">
+    <div class="sec-in">
+      <div class="sec-hd">
+        <div><p class="sec-lbl">What We Offer</p><h2 class="sec-title">Comprehensive <em>Home Health</em> Services</h2><p class="sec-sub">Certified caregivers providing skilled nursing, daily living support, and specialized care — all in your home.</p></div>
+        <button class="btn-more" onclick="nav('services')">View All Services →</button>
+      </div>
+      <div class="svc-grid">
+        <div class="svc-card"><div class="svc-n">01</div><div class="svc-icon si-b">🔄</div><h3>Transitional Care</h3><div class="stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="rtext">4.9 (128)</span></div><p>Expert support from hospital or rehab back to home. Includes wound care, medication management, and family education.</p><span class="svc-lnk" onclick="nav('schedule')">Request →</span></div>
+        <div class="svc-card"><div class="svc-n">02</div><div class="svc-icon si-t">🍽️</div><h3>Meal Preparation</h3><div class="stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="rtext">4.8 (96)</span></div><p>Personalized cooking for diabetic, heart-healthy, and allergy-sensitive diets. Breakfast, lunch, and dinner available.</p><span class="svc-lnk" onclick="nav('schedule')">Request →</span></div>
+        <div class="svc-card"><div class="svc-n">03</div><div class="svc-icon si-b">📱</div><h3>Telehealth Care</h3><div class="stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="rtext">4.9 (74)</span></div><p>HIPAA-compliant one-on-one video consultations with registered nurses and care coordinators from your home.</p><span class="svc-lnk" onclick="nav('schedule')">Request →</span></div>
+        <div class="svc-card"><div class="svc-n">04</div><div class="svc-icon si-t">👫</div><h3>Companionship</h3><div class="stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="rtext">5.0 (112)</span></div><p>Social engagement, conversation, activities, and emotional support to reduce isolation and improve well-being.</p><span class="svc-lnk" onclick="nav('schedule')">Request →</span></div>
+        <div class="svc-card"><div class="svc-n">05</div><div class="svc-icon si-b">💊</div><h3>Medicines Delivery</h3><div class="stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="rtext">4.7 (83)</span></div><p>Same-day prescription pickup and delivery with medication reminders and administration support.</p><span class="svc-lnk" onclick="nav('schedule')">Request →</span></div>
+        <div class="svc-card"><div class="svc-n">06</div><div class="svc-icon si-t">🏪</div><h3>Adult Day Care</h3><div class="stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="rtext">4.8 (61)</span></div><p>Flexible hourly or full-day supervised programs with activities, meals, and health monitoring for working families.</p><span class="svc-lnk" onclick="nav('schedule')">Request →</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How We Help strip -->
+  <section class="sec bg-off">
+    <div class="sec-in">
+      <div class="hwh-grid">
+        <div class="steps">
+          <p class="sec-lbl">Our Process</p>
+          <h2 class="sec-title" style="margin-bottom:28px;">How We <em>Help</em></h2>
+          <div class="step"><div class="snum">1</div><div><h4>Free Consultation</h4><p>No-obligation in-home assessment to understand your loved one's unique needs and goals.</p></div></div>
+          <div class="step"><div class="snum">2</div><div><h4>Personalized Care Plan</h4><p>A custom plan covering services, schedule, and measurable outcomes — built with your family.</p></div></div>
+          <div class="step"><div class="snum">3</div><div><h4>Caregiver Matching</h4><p>We match a certified, background-checked caregiver based on skills, language, and personality.</p></div></div>
+          <div class="step"><div class="snum">4</div><div><h4>Ongoing Quality Reviews</h4><p>Monthly check-ins and plan updates ensure consistently excellent, evolving care.</p></div></div>
+          <div style="margin-top:22px;"><button class="btn-hero-p" onclick="nav('howwehelp')" style="font-size:0.84rem;padding:12px 22px;">See Full Process →</button></div>
+        </div>
+        <div class="hwh-panel">
+          <h3>Accredited &<br/><em>Certified</em></h3>
+          <p>Manzanita holds the industry's highest accreditations — ensuring safe, professional care every visit.</p>
+          <div class="accred-list">
+            <div class="acc-item"><span class="acc-ic">🏅</span><span class="acc-txt">Joint Commission Accredited</span></div>
+            <div class="acc-item"><span class="acc-ic">✅</span><span class="acc-txt">California DHCS Licensed #HSC-123456</span></div>
+            <div class="acc-item"><span class="acc-ic">🛡️</span><span class="acc-txt">Medicare & Medi-Cal Certified</span></div>
+            <div class="acc-item"><span class="acc-ic">⭐</span><span class="acc-txt">5-Star CMS Quality Rating</span></div>
+            <div class="acc-item"><span class="acc-ic">🔒</span><span class="acc-txt">HIPAA & HITECH Compliant</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials preview -->
+  <section class="sec">
+    <div class="sec-in">
+      <div class="sec-hd"><div><p class="sec-lbl">Patient Stories</p><h2 class="sec-title">What Families <em>Say</em></h2></div><button class="btn-more" onclick="nav('testimonials')">All Stories →</button></div>
+      <div class="testi-grid">
+        <div class="tcard"><div class="tcard-stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div><p class="tcard-q">"Manzanita has been a lifesaver for our family. My mother's caregiver treats her like family. The professionalism and warmth is unlike any agency we've tried."</p><div class="tcard-auth"><div class="tcard-av">JM</div><div><div class="tcard-name">James Morales</div><div class="tcard-role">Son of patient · San Jose</div><div class="tcard-v">✓ Verified Client</div></div></div></div>
+        <div class="tcard"><div class="tcard-stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div><p class="tcard-q">"After my father's hip surgery, Manzanita was at our door in 48 hours with a complete care plan. Absolutely outstanding service — I can't recommend them highly enough."</p><div class="tcard-auth"><div class="tcard-av">SP</div><div><div class="tcard-name">Sarah Patel</div><div class="tcard-role">Daughter of patient · Oakland</div><div class="tcard-v">✓ Verified Client</div></div></div></div>
+        <div class="tcard"><div class="tcard-stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div><p class="tcard-q">"The telehealth option has been incredible. My grandmother has video consultations with her nurse without leaving home. The platform is easy and the nurses are so patient."</p><div class="tcard-auth"><div class="tcard-av">LC</div><div><div class="tcard-name">Linda Chen</div><div class="tcard-role">Granddaughter · Fremont</div><div class="tcard-v">✓ Verified Client</div></div></div></div>
+      </div>
+    </div>
+  </section>
+  <div class="support-strip"><p>🕐 <strong>24/7 Care Support</strong> — Call <a href="tel:4158234400">(415) 823-4400</a> · Email <a href="mailto:care@manzanitahealth.com">care@manzanitahealth.com</a> · Follow us on <a href="#">Instagram</a>, <a href="#">Facebook</a> & <a href="#">Twitter</a></p></div>
+</div>
+
+<!-- ==================== SERVICES ==================== -->
+<div class="page" id="page-services">
+  <section class="sec bg-off" style="padding-bottom:32px;"><div class="sec-in"><p class="sec-lbl">What We Offer</p><h2 class="sec-title">Our Home Health <em>Services</em></h2><p class="sec-sub">Comprehensive, certified care — all delivered in the comfort and safety of your home.</p></div></section>
+  <section class="sec" style="padding-top:36px;"><div class="sec-in">
+    <div class="svc-grid">
+      <div class="svc-card"><div class="svc-n">S.1</div><div class="svc-icon si-b">🔄</div><h3>Transitional Care</h3><div class="stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="rtext">4.9 (128)</span></div><p>Post-hospital recovery support including medication management, wound care, PT coordination, and family education. Seamless hospital-to-home transitions.</p><span class="svc-lnk" onclick="nav('schedule')">Request this service →</span></div>
+      <div class="svc-card"><div class="svc-n">S.2</div><div class="svc-icon si-t">🧼</div><h3>Personal Hygiene</h3><div class="stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="rtext">4.8 (104)</span></div><p>Dignified bathing, grooming, oral hygiene, and dressing assistance. Clinical hygiene protocols and infection prevention guidelines followed at every visit.</p><span class="svc-lnk" onclick="nav('schedule')">Request this service →</span></div>
+      <div class="svc-card"><div class="svc-n">S.3</div><div class="svc-icon si-t">👫</div><h3>Companionship</h3><div class="stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="rtext">5.0 (112)</span></div><p>Meaningful engagement through conversation, games, and activities. Compatible with tablets and video calling for remote family connection.</p><span class="svc-lnk" onclick="nav('schedule')">Request this service →</span></div>
+      <div class="svc-card"><div class="svc-n">S.4</div><div class="svc-icon si-b">💊</div><h3>Medicines Delivery</h3><div class="stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="rtext">4.7 (83)</span></div><p>Same-day prescription pickup and delivery. Includes medication reminders, refill management, and pharmacy coordination. Contactless delivery available.</p><span class="svc-lnk" onclick="nav('schedule')">Request this service →</span></div>
+      <div class="svc-card"><div class="svc-n">S.5</div><div class="svc-icon si-t">🚶</div><h3>Daily Activities</h3><div class="stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="rtext">4.8 (90)</span></div><p>Light housekeeping, laundry, grocery shopping, errands, and transportation to appointments. Helping maintain daily routines with dignity.</p><span class="svc-lnk" onclick="nav('schedule')">Request this service →</span></div>
+      <div class="svc-card"><div class="svc-n">S.6</div><div class="svc-icon si-b">🍽️</div><h3>Meal Preparation</h3><div class="stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="rtext">4.8 (96)</span></div><p>Diabetic, heart-healthy, low-sodium, and allergy-sensitive meal planning and cooking. Breakfast, lunch, dinner, and snack preparation available daily.</p><span class="svc-lnk" onclick="nav('schedule')">Request this service →</span></div>
+      <div class="svc-card"><div class="svc-n">S.7</div><div class="svc-icon si-t">🏪</div><h3>Adult Day Care / Hourly</h3><div class="stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="rtext">4.8 (61)</span></div><p>Flexible hourly supervision or full-day structured programs. Ideal for working family caregivers. Activities, meals, and health monitoring included.</p><span class="svc-lnk" onclick="nav('schedule')">Request this service →</span></div>
+      <div class="svc-card"><div class="svc-n">S.8</div><div class="svc-icon si-b">📱</div><h3>Telehealth Care</h3><div class="stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="rtext">4.9 (74)</span></div><p>HIPAA-compliant one-on-one video consultations. Ideal for check-ins, prescription reviews, symptom assessment, and care plan updates from home.</p><span class="svc-lnk" onclick="nav('schedule')">Request this service →</span></div>
+      <div class="svc-card"><div class="svc-n">S.9</div><div class="svc-icon si-t">🎁</div><h3>Gift Services</h3><div class="stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="rtext">4.6 (38)</span></div><p>Thoughtfully curated wellness and comfort gift packages for patients and families — perfect for recovery milestones, holidays, or brightening someone's day.</p><span class="svc-lnk" onclick="nav('contact')">Inquire →</span></div>
+    </div>
+    <div style="margin-top:44px;background:var(--bg);border-radius:12px;padding:28px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:18px;">
+      <div><h3 style="font-family:'Lora',serif;font-size:1.1rem;color:var(--navy);margin-bottom:5px;">Not sure which service fits?</h3><p style="font-size:0.86rem;color:var(--mid);">Our care coordinators offer free consultations to help you choose.</p></div>
+      <button class="btn-hero-p" onclick="nav('contact')" style="font-size:0.84rem;padding:12px 22px;">Get a Free Consultation</button>
+    </div>
+  </div></section>
+</div>
+
+<!-- ==================== HOW WE HELP ==================== -->
+<div class="page" id="page-howwehelp">
+  <section class="sec bg-off" style="padding-bottom:32px;"><div class="sec-in"><p class="sec-lbl">Our Process</p><h2 class="sec-title">How Manzanita <em>Helps</em></h2><p class="sec-sub">From your first call to ongoing care — simple, supportive, and centered on your loved one.</p></div></section>
+  <section class="sec" style="padding-top:44px;"><div class="sec-in"><div class="hwh-grid">
+    <div class="steps">
+      <div class="step"><div class="snum">1</div><div><h4>Initial Inquiry</h4><p>Call, email, or fill out our form. A coordinator responds within 2 hours during business hours.</p></div></div>
+      <div class="step"><div class="snum">2</div><div><h4>Free In-Home Assessment</h4><p>An RN visits at no cost to evaluate health status, safety, and daily needs.</p></div></div>
+      <div class="step"><div class="snum">3</div><div><h4>Personalized Care Plan</h4><p>A detailed plan with services, frequency, and measurable goals — built with your family.</p></div></div>
+      <div class="step"><div class="snum">4</div><div><h4>Caregiver Matching</h4><p>We match a certified caregiver on skills, experience, language, and schedule compatibility.</p></div></div>
+      <div class="step"><div class="snum">5</div><div><h4>Care Begins</h4><p>Your caregiver arrives on schedule. All visits are logged and shared via the patient portal.</p></div></div>
+      <div class="step"><div class="snum">6</div><div><h4>Monthly Reviews</h4><p>We adjust the care plan as needs evolve, ensuring consistently excellent care.</p></div></div>
+    </div>
+    <div class="hwh-panel">
+      <h3>Why Choose<br/><em>Manzanita?</em></h3>
+      <p>We hold ourselves to the highest industry standards — because your family deserves nothing less.</p>
+      <div class="accred-list">
+        <div class="acc-item"><span class="acc-ic">🏅</span><span class="acc-txt">Joint Commission Accredited Agency</span></div>
+        <div class="acc-item"><span class="acc-ic">✅</span><span class="acc-txt">CA DHCS Licensed #HSC-123456</span></div>
+        <div class="acc-item"><span class="acc-ic">🛡️</span><span class="acc-txt">Medicare & Medi-Cal Certified</span></div>
+        <div class="acc-item"><span class="acc-ic">⭐</span><span class="acc-txt">5-Star CMS Quality Measure Rating</span></div>
+        <div class="acc-item"><span class="acc-ic">🔒</span><span class="acc-txt">HIPAA & HITECH Compliant</span></div>
+        <div class="acc-item"><span class="acc-ic">🩺</span><span class="acc-txt">RN-Supervised Care Programs</span></div>
+      </div>
+    </div>
+  </div></div></section>
+</div>
+
+<!-- ==================== ABOUT ==================== -->
+<div class="page" id="page-about">
+  <section class="sec"><div class="sec-in"><div class="about-grid">
+    <div class="about-visual">
+      <div class="about-img">🏡</div>
+      <div class="about-badge"><div class="ab-num">15+</div><div class="ab-lbl">Years in Bay Area</div></div>
+    </div>
+    <div class="about-content">
+      <p class="sec-lbl">Our Story</p>
+      <h2 class="sec-title">Care Rooted in <em>Community</em></h2>
+      <h3>Founded with Purpose</h3>
+      <p>Manzanita Health Care was founded in 2010 by a team of registered nurses and family caregivers who saw firsthand the lack of compassionate, professional home care for Bay Area seniors. Our name — Manzanita — is a native California plant known for its resilience and deep roots, values that define our care philosophy.</p>
+      <h3>Our Mission</h3>
+      <p>We believe every individual deserves to age with dignity, independence, and joy — in the place they call home. Our mission is to deliver the highest quality home health care through skilled, caring professionals who treat every patient like family.</p>
+      <div class="values-grid">
+        <div class="val-item"><span class="val-ic">💛</span><span class="val-txt">Compassion First</span></div>
+        <div class="val-item"><span class="val-ic">🔒</span><span class="val-txt">Safety & Integrity</span></div>
+        <div class="val-item"><span class="val-ic">🎯</span><span class="val-txt">Personalized Care</span></div>
+        <div class="val-item"><span class="val-ic">🤝</span><span class="val-txt">Family Partnership</span></div>
+      </div>
+      <div class="supporters">
+        <h4>Our Supporters & Funders</h4>
+        <div class="sup-logos">
+          <span class="sup-tag">UCSF Health</span><span class="sup-tag">Kaiser Permanente</span><span class="sup-tag">Bay Area Community Foundation</span><span class="sup-tag">CA Dept. of Aging</span><span class="sup-tag">AARP California</span>
+        </div>
+      </div>
+    </div>
+  </div></div></section>
+</div>
+
+<!-- ==================== STAFF ==================== -->
+<div class="page" id="page-staff">
+  <section class="sec bg-off" style="padding-bottom:32px;"><div class="sec-in"><p class="sec-lbl">Meet the Team</p><h2 class="sec-title">Our <em>Care Professionals</em></h2><p class="sec-sub">Background-checked, licensed, and trained to the highest standard of home health care.</p></div></section>
+  <section class="sec" style="padding-top:36px;"><div class="sec-in"><div class="staff-grid">
+    <div class="scard"><div class="scard-photo sp1">👩‍⚕️</div><div class="scard-body"><div class="scard-name">Dr. Maria Santos, RN</div><div class="scard-title">Director of Nursing</div><div class="scard-cred">BSN, MSN — UCSF · 18 yrs exp.</div><div class="scard-msg">"Every patient deserves care that honors their dignity and story."</div></div></div>
+    <div class="scard"><div class="scard-photo sp2">👨‍⚕️</div><div class="scard-body"><div class="scard-name">James Okafor, RN</div><div class="scard-title">Senior Care Coordinator</div><div class="scard-cred">BSN — Stanford · 12 yrs exp.</div><div class="scard-msg">"I believe in building genuine relationships, not just completing tasks."</div></div></div>
+    <div class="scard"><div class="scard-photo sp3">👩‍⚕️</div><div class="scard-body"><div class="scard-name">Rosa Hernandez, CNA</div><div class="scard-title">Certified Nursing Assistant</div><div class="scard-cred">CNA #CA-248310 · 9 yrs exp.</div><div class="scard-msg">"Caring for others is the most meaningful work I know."</div></div></div>
+    <div class="scard"><div class="scard-photo sp4">👨‍⚕️</div><div class="scard-body"><div class="scard-name">David Kim, PT</div><div class="scard-title">Physical Therapist</div><div class="scard-cred">DPT — Cal State · 7 yrs exp.</div><div class="scard-msg">"Recovery is a journey. I'm honored to walk it with my patients."</div></div></div>
+    <div class="scard"><div class="scard-photo sp1">👩‍⚕️</div><div class="scard-body"><div class="scard-name">Priya Nair, MSW</div><div class="scard-title">Social Worker</div><div class="scard-cred">MSW — UC Berkeley · 11 yrs exp.</div><div class="scard-msg">"I help families navigate hard decisions with clarity and compassion."</div></div></div>
+    <div class="scard"><div class="scard-photo sp2">👨‍⚕️</div><div class="scard-body"><div class="scard-name">Thomas Green, HHA</div><div class="scard-title">Home Health Aide</div><div class="scard-cred">HHA Certified · 6 yrs exp.</div><div class="scard-msg">"A warm smile and a helping hand make all the difference."</div></div></div>
+    <div class="scard"><div class="scard-photo sp3">👩‍⚕️</div><div class="scard-body"><div class="scard-name">Angela Reyes, LVN</div><div class="scard-title">Licensed Vocational Nurse</div><div class="scard-cred">LVN #CA-189042 · 8 yrs exp.</div><div class="scard-msg">"I treat every patient as I would want my own parents treated."</div></div></div>
+    <div class="scard"><div class="scard-photo sp4">👨‍⚕️</div><div class="scard-body"><div class="scard-name">Samuel Torres, CHW</div><div class="scard-title">Community Health Worker</div><div class="scard-cred">CHW Certified · Bilingual EN/ES</div><div class="scard-msg">"Language should never be a barrier to quality care."</div></div></div>
+  </div></div></section>
+</div>
+
+<!-- ==================== TESTIMONIALS ==================== -->
+<div class="page" id="page-testimonials">
+  <section class="sec bg-off" style="padding-bottom:32px;"><div class="sec-in"><p class="sec-lbl">Patient Stories</p><h2 class="sec-title">Stories from Our <em>Community</em></h2></div></section>
+  <section class="sec" style="padding-top:36px;"><div class="sec-in"><div class="testi-grid">
+    <div class="tcard"><div class="tcard-stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div><p class="tcard-q">"Manzanita has been a lifesaver. My mother's caregiver treats her like family. The professionalism and warmth is unlike any agency we've tried."</p><div class="tcard-auth"><div class="tcard-av">JM</div><div><div class="tcard-name">James Morales</div><div class="tcard-role">San Jose · Son of patient</div><div class="tcard-v">✓ Verified</div></div></div></div>
+    <div class="tcard"><div class="tcard-stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div><p class="tcard-q">"After my father's hip surgery, Manzanita was at our door in 48 hours with a complete care plan. Absolutely outstanding service."</p><div class="tcard-auth"><div class="tcard-av">SP</div><div><div class="tcard-name">Sarah Patel</div><div class="tcard-role">Oakland · Daughter of patient</div><div class="tcard-v">✓ Verified</div></div></div></div>
+    <div class="tcard"><div class="tcard-stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div><p class="tcard-q">"The telehealth option is incredible. My grandmother consults with her nurse without leaving home. The nurses are so patient."</p><div class="tcard-auth"><div class="tcard-av">LC</div><div><div class="tcard-name">Linda Chen</div><div class="tcard-role">Fremont · Granddaughter</div><div class="tcard-v">✓ Verified</div></div></div></div>
+    <div class="tcard"><div class="tcard-stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div><p class="tcard-q">"The meal preparation service completely changed my dad's nutrition. He's gained healthy weight and has so much more energy."</p><div class="tcard-auth"><div class="tcard-av">RW</div><div><div class="tcard-name">Robert Wills</div><div class="tcard-role">Palo Alto · Son of patient</div><div class="tcard-v">✓ Verified</div></div></div></div>
+    <div class="tcard"><div class="tcard-stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div><p class="tcard-q">"Rosa has been with my mother for two years. She knows her routines, her preferences, and genuinely cares. This is gold standard care."</p><div class="tcard-auth"><div class="tcard-av">AK</div><div><div class="tcard-name">Anita Kumar</div><div class="tcard-role">Sunnyvale · Daughter of patient</div><div class="tcard-v">✓ Verified</div></div></div></div>
+    <div class="tcard"><div class="tcard-stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div><p class="tcard-q">"Scheduling through the portal is so easy. I can see exactly when the caregiver arrived, what was done, and message the team instantly."</p><div class="tcard-auth"><div class="tcard-av">MF</div><div><div class="tcard-name">Michael Fong</div><div class="tcard-role">San Francisco · Son of patient</div><div class="tcard-v">✓ Verified</div></div></div></div>
+  </div></div></section>
+</div>
+
+<!-- ==================== CONTACT ==================== -->
+<div class="page" id="page-contact">
+  <section class="sec bg-off" style="padding-bottom:32px;"><div class="sec-in"><p class="sec-lbl">Get In Touch</p><h2 class="sec-title">Contact <em>Us</em></h2><p class="sec-sub">We're here 7 days a week to answer your questions and help you find the right care.</p></div></section>
+  <section class="sec" style="padding-top:44px;"><div class="sec-in"><div class="contact-grid">
+    <div class="contact-info">
+      <h3>We're Here to Help</h3>
+      <p>Whether you have questions, want a free consultation, or need urgent care support — our team is ready.</p>
+      <div class="citem"><div class="cic">📞</div><div><h4>Phone</h4><p><a href="tel:4158234400">(415) 823-4400</a></p><p style="font-size:0.76rem;color:var(--muted);">Mon–Sat 7am–8pm · Sun 9am–5pm</p></div></div>
+      <div class="citem"><div class="cic">✉️</div><div><h4>Email</h4><p><a href="mailto:care@manzanitahealth.com">care@manzanitahealth.com</a></p><p style="font-size:0.76rem;color:var(--muted);">Response within 2 business hours</p></div></div>
+      <div class="citem"><div class="cic">📍</div><div><h4>Office</h4><p>1450 Mission Street, Suite 300<br/>San Francisco, CA 94103</p></div></div>
+      <div class="citem"><div class="cic">🕐</div><div><h4>Hours</h4><div class="hrs-grid"><span class="hrs-row">Mon–Fri <span>Open</span></span><span class="hrs-row">7:00am–8:00pm</span><span class="hrs-row">Saturday <span>Open</span></span><span class="hrs-row">8:00am–6:00pm</span><span class="hrs-row">Sunday</span><span class="hrs-row">9:00am–5:00pm</span></div></div></div>
+      <!-- SOCIAL MEDIA SECTION -->
+      <div class="social-section">
+        <h4>Follow Us</h4>
+        <div class="social-row">
+          <a href="https://facebook.com/manzanitahealthcare" class="soc-btn soc-fb" target="_blank">f Facebook</a>
+          <a href="https://instagram.com/manzanitahealthcare" class="soc-btn soc-ig" target="_blank">▣ Instagram</a>
+          <a href="https://twitter.com/manzanitahealth" class="soc-btn soc-tw" target="_blank">𝕏 Twitter</a>
+          <a href="https://youtube.com/manzanitahealthcare" class="soc-btn soc-yt" target="_blank">▶ YouTube</a>
+          <a href="https://linkedin.com/company/manzanitahealthcare" class="soc-btn soc-li" target="_blank">in LinkedIn</a>
+        </div>
+      </div>
+    </div>
+    <div class="fcard">
+      <h3>Send Us a Message</h3><p>We'll respond within 2 business hours.</p>
+      <div class="frow"><div class="fg"><label>First Name *</label><input type="text" placeholder="Maria"/></div><div class="fg"><label>Last Name *</label><input type="text" placeholder="Santos"/></div></div>
+      <div class="fg"><label>Email *</label><input type="email" placeholder="maria@email.com"/></div>
+      <div class="fg"><label>Phone</label><input type="tel" placeholder="(415) 000-0000"/></div>
+      <div class="fg"><label>Inquiry Type</label><select><option>General Question</option><option>Service Information</option><option>Schedule a Free Consultation</option><option>Billing & Insurance</option><option>Caregiver Feedback</option><option>Employment</option></select></div>
+      <div class="fg"><label>Message *</label><textarea placeholder="Tell us about your loved one's care needs…"></textarea></div>
+      <button class="fsub" onclick="showSuccess('contact-ok')">Send Message</button>
+      <div class="success-msg" id="contact-ok">✅ Thank you! We'll respond within 2 business hours.</div>
+    </div>
+  </div></div></section>
+  <div class="map-wrap"><div class="map-in"><div class="map-card"><div class="map-frame"><div class="map-pin-wrap"><div class="map-pin"><span>📍</span></div><div class="map-lbl"><strong>Manzanita Health Care</strong><span>1450 Mission St, Suite 300, San Francisco, CA 94103</span></div></div></div></div></div></div>
+</div>
+
+<!-- ==================== SCHEDULE ==================== -->
+<div class="page" id="page-schedule">
+  <section class="sec bg-off" style="padding-bottom:32px;"><div class="sec-in"><p class="sec-lbl">Book a Visit</p><h2 class="sec-title">Schedule a <em>Service</em></h2><p class="sec-sub">Same-week availability across most Bay Area locations. Free in-home assessment for new patients.</p></div></section>
+  <section class="sec bg-off" style="padding-top:40px;"><div class="sec-in"><div class="sch-grid">
+    <div class="sch-left">
+      <h2>Easy Online Scheduling</h2>
+      <p>Select a service, date, and time. A coordinator confirms within 2 hours.</p>
+      <div class="sch-feats">
+        <div class="sf"><div class="sfck">✓</div>Same-week appointments available</div>
+        <div class="sf"><div class="sfck">✓</div>Free in-home assessment for new patients</div>
+        <div class="sf"><div class="sfck">✓</div>No obligation — cancel anytime</div>
+        <div class="sf"><div class="sfck">✓</div>Bilingual coordinators (EN/ES)</div>
+        <div class="sf"><div class="sfck">✓</div>Medicare & private pay accepted</div>
+      </div>
+    </div>
+    <div class="fcard">
+      <h3>📅 Request an Appointment</h3>
+      <div class="frow"><div class="fg"><label>First Name *</label><input type="text" placeholder="First name"/></div><div class="fg"><label>Last Name *</label><input type="text" placeholder="Last name"/></div></div>
+      <div class="fg"><label>Phone *</label><input type="tel" placeholder="(415) 000-0000"/></div>
+      <div class="fg"><label>Service Needed</label><select><option>Free In-Home Consultation</option><option>Transitional Care</option><option>Personal Hygiene</option><option>Companionship</option><option>Medicines Delivery</option><option>Daily Activities</option><option>Meal Preparation</option><option>Adult Day Care</option><option>Telehealth Consultation</option></select></div>
+      <div class="fg"><label>Preferred Date</label><input type="date"/></div>
+      <div class="fg"><label>Available Time Slots</label>
+        <div class="ts-grid">
+          <div class="tslot" onclick="selSlot(this)">8:00 AM</div><div class="tslot" onclick="selSlot(this)">9:00 AM</div><div class="tslot na">10:00 AM</div>
+          <div class="tslot" onclick="selSlot(this)">11:00 AM</div><div class="tslot na">12:00 PM</div><div class="tslot" onclick="selSlot(this)">1:00 PM</div>
+          <div class="tslot" onclick="selSlot(this)">2:00 PM</div><div class="tslot" onclick="selSlot(this)">3:00 PM</div><div class="tslot na">4:00 PM</div>
+          <div class="tslot" onclick="selSlot(this)">5:00 PM</div><div class="tslot" onclick="selSlot(this)">6:00 PM</div><div class="tslot" onclick="selSlot(this)">7:00 PM</div>
+        </div>
+      </div>
+      <div class="fg"><label>Notes</label><textarea placeholder="Specific needs, language preferences, accessibility…" style="min-height:75px;"></textarea></div>
+      <button class="fsub" onclick="showSuccess('sch-ok')">Confirm Request</button>
+      <div class="success-msg" id="sch-ok">✅ Request received! A coordinator will call you within 2 hours.</div>
+    </div>
+  </div></div></section>
+</div>
+
+<!-- ==================== PATIENT PORTAL ==================== -->
+<div class="page" id="page-portal">
+  <section class="sec bg-off" style="padding-bottom:32px;"><div class="sec-in"><p class="sec-lbl">Patient Account</p><h2 class="sec-title">Patient <em>Portal</em></h2><p class="sec-sub">Access records, test results, care history, and account details securely.</p></div></section>
+  <section class="sec" style="padding-top:36px;"><div class="sec-in">
+    <!-- SAMPLE CREDENTIALS BOX -->
+    <div style="background:#FFF8E1;border:1.5px solid #FFB300;border-radius:10px;padding:16px 20px;margin-bottom:28px;max-width:500px;display:flex;gap:12px;align-items:flex-start;">
+      <span style="font-size:1.2rem;">🔑</span>
+      <div>
+        <p style="font-size:0.82rem;font-weight:700;color:#7A5700;margin-bottom:6px;">Sample Login Credentials (Demo)</p>
+        <p style="font-size:0.81rem;color:#8A6200;line-height:1.7;">Patient ID: <strong>MHC-2024-00142</strong><br/>Password: <strong>Demo@Manzanita1</strong><br/><span style="font-size:0.74rem;color:#A07800;">These are demo credentials for testing purposes only.</span></p>
+      </div>
+    </div>
+    <div style="max-width:460px;background:white;border:1px solid var(--border);border-radius:14px;padding:32px;margin-bottom:32px;">
+      <h3 style="font-family:'Lora',serif;font-size:1.1rem;color:var(--navy);margin-bottom:18px;">🔒 Secure Patient Login</h3>
+      <div class="fg"><label>Patient ID</label><input type="text" placeholder="e.g. MHC-2024-00142" id="portalId"/></div>
+      <div class="fg"><label>Password</label><input type="password" placeholder="Enter your password" id="portalPw"/></div>
+      <button class="fsub" onclick="portalLogin()">Sign In to Portal</button>
+      <div class="success-msg" id="portal-ok">✅ Welcome back! Loading your dashboard…</div>
+      <p style="font-size:0.76rem;color:var(--muted);margin-top:12px;text-align:center;">Don't have an account? <a onclick="nav('contact')" style="color:var(--blue);font-weight:600;cursor:pointer;">Contact us to register</a></p>
+    </div>
+    <div class="portal-tabs"><div class="ptab active" onclick="switchTab(this)">Test Results</div><div class="ptab" onclick="switchTab(this)">Care History</div><div class="ptab" onclick="switchTab(this)">Account Details</div></div>
+    <div class="p-grid">
+      <div class="pcard"><h3>🧪 Recent Test Results</h3><p>Login above to view your personal results.</p><table class="rtbl"><thead><tr><th>Test</th><th>Date</th><th>Result</th><th>Status</th></tr></thead><tbody><tr><td>Blood Pressure</td><td>Apr 10</td><td>122/78</td><td><span class="bn">Normal</span></td></tr><tr><td>Blood Glucose</td><td>Apr 10</td><td>104 mg/dL</td><td><span class="bn">Normal</span></td></tr><tr><td>Cholesterol</td><td>Apr 3</td><td>218 mg/dL</td><td><span class="br">Review</span></td></tr><tr><td>CBC Panel</td><td>Mar 28</td><td>Pending Lab</td><td><span class="bp">Pending</span></td></tr></tbody></table></div>
+      <div class="pcard"><h3>📋 Upcoming Visits</h3><p>Your scheduled care visits for the next 7 days.</p><table class="rtbl"><thead><tr><th>Date</th><th>Service</th><th>Caregiver</th></tr></thead><tbody><tr><td>Apr 16</td><td>Personal Hygiene</td><td>Rosa H.</td></tr><tr><td>Apr 17</td><td>Meal Preparation</td><td>Thomas G.</td></tr><tr><td>Apr 19</td><td>Telehealth</td><td>Dr. Santos</td></tr><tr><td>Apr 21</td><td>Daily Activities</td><td>Rosa H.</td></tr></tbody></table></div>
+    </div>
+  </div></section>
+</div>
+
+<!-- ==================== PAYMENT ==================== -->
+<div class="page" id="page-payment">
+  <section class="sec bg-off" style="padding-bottom:32px;"><div class="sec-in"><p class="sec-lbl">Billing</p><h2 class="sec-title">Payment <em>Options</em></h2><p class="sec-sub">Flexible, transparent billing. Medicare, Medi-Cal, private insurance, and direct payment accepted.</p></div></section>
+  <section class="sec" style="padding-top:36px;"><div class="sec-in" style="max-width:740px;">
+    <h3 style="font-family:'Lora',serif;font-size:1.05rem;color:var(--navy);margin-bottom:18px;">Select Payment Method</h3>
+    <div class="pay-opts">
+      <div class="popt sel" onclick="selPay(this)"><div class="popt-ic">🏥</div><div class="popt-name">Medicare</div><div class="popt-sub">Part A & Part B</div></div>
+      <div class="popt" onclick="selPay(this)"><div class="popt-ic">🛡️</div><div class="popt-name">Medi-Cal</div><div class="popt-sub">CA Medicaid</div></div>
+      <div class="popt" onclick="selPay(this)"><div class="popt-ic">💼</div><div class="popt-name">Private Insurance</div><div class="popt-sub">Most plans accepted</div></div>
+      <div class="popt" onclick="selPay(this)"><div class="popt-ic">💳</div><div class="popt-name">Credit / Debit</div><div class="popt-sub">Visa, MC, Amex</div></div>
+      <div class="popt" onclick="selPay(this)"><div class="popt-ic">🏦</div><div class="popt-name">Bank Transfer</div><div class="popt-sub">ACH / Direct</div></div>
+      <div class="popt" onclick="selPay(this)"><div class="popt-ic">📱</div><div class="popt-name">Zelle / Venmo</div><div class="popt-sub">Digital wallet</div></div>
+    </div>
+    <div class="fcard" style="margin-top:0;">
+      <h3>Payment Details</h3><p>Secure, encrypted payment processing.</p>
+      <div class="fg"><label>Patient ID</label><input type="text" placeholder="MHC-2024-00142"/></div>
+      <div class="fg"><label>Cardholder Name</label><input type="text" placeholder="Full name on card"/></div>
+      <div class="frow"><div class="fg"><label>Card Number</label><input type="text" placeholder="•••• •••• •••• ••••"/></div><div class="fg"><label>Expiry / CVV</label><input type="text" placeholder="MM/YY — CVV"/></div></div>
+      <button class="fsub" onclick="showSuccess('pay-ok')">Submit Secure Payment</button>
+      <div class="success-msg" id="pay-ok">✅ Payment processed! Receipt sent to your email.</div>
+      <p style="font-size:0.74rem;color:var(--muted);margin-top:10px;text-align:center;">🔒 256-bit SSL · HIPAA compliant billing</p>
+    </div>
+  </div></section>
+</div>
+
+<!-- ==================== FEEDBACK ==================== -->
+<div class="page" id="page-feedback">
+  <section class="sec"><div class="sec-in" style="max-width:620px;">
+    <p class="sec-lbl">Your Voice Matters</p><h2 class="sec-title">Leave <em>Feedback</em></h2>
+    <p class="sec-sub" style="margin-bottom:36px;">Help us improve by sharing your experience with Manzanita.</p>
+    <div class="fcard">
+      <h3>Rate Your Experience</h3>
+      <div class="fg"><label>Overall Rating</label><div class="stars-inp" id="starsInp"><button class="star-b" onclick="rateStar(1)">★</button><button class="star-b" onclick="rateStar(2)">★</button><button class="star-b" onclick="rateStar(3)">★</button><button class="star-b" onclick="rateStar(4)">★</button><button class="star-b" onclick="rateStar(5)">★</button></div></div>
+      <div class="fg"><label>Patient ID (optional)</label><input type="text" placeholder="MHC-2024-00142"/></div>
+      <div class="fg"><label>Caregiver Name</label><input type="text" placeholder="Who did you work with?"/></div>
+      <div class="fg"><label>Service Received</label><select><option>Transitional Care</option><option>Personal Hygiene</option><option>Companionship</option><option>Meal Preparation</option><option>Medicines Delivery</option><option>Telehealth</option><option>Daily Activities</option></select></div>
+      <div class="fg"><label>Your Feedback *</label><textarea placeholder="What went well, what could be improved…"></textarea></div>
+      <div class="fg"><label>Would you recommend us?</label><select><option>Yes, definitely</option><option>Yes, probably</option><option>Not sure</option><option>Probably not</option></select></div>
+      <button class="fsub" onclick="showSuccess('fb-ok')">Submit Feedback</button>
+      <div class="success-msg" id="fb-ok">✅ Thank you! Your feedback helps us improve our care.</div>
+    </div>
+  </div></section>
+</div>
+
+<!-- ==================== LIVE CHAT ==================== -->
+<div class="page" id="page-chat">
+  <section class="sec"><div class="sec-in"><div class="chat-layout">
+    <div>
+      <p class="sec-lbl">Instant Support</p><h2 class="sec-title">Live <em>Chat</em></h2>
+      <p style="font-size:0.88rem;color:var(--mid);line-height:1.82;margin-bottom:22px;">Connect instantly with a Manzanita care coordinator for real-time help or urgent support.</p>
+      <div class="sch-feats">
+        <div class="sf"><div class="sfck">✓</div>Available Mon–Sat, 7am–8pm</div>
+        <div class="sf"><div class="sfck">✓</div>Average response: under 2 minutes</div>
+        <div class="sf"><div class="sfck">✓</div>Bilingual support (EN/ES)</div>
+        <div class="sf"><div class="sfck">✓</div>After-hours: (415) 823-4400</div>
+      </div>
+    </div>
+    <div>
+      <div class="chat-win">
+        <div class="chat-hdr"><div class="chat-hav">👩‍⚕️</div><div><div class="chat-hname">Maria Santos — Care Coordinator</div><div class="chat-hst"><span class="chat-online-dot"></span>Online now</div></div></div>
+        <div class="chat-msgs" id="chatMsgs">
+          <div class="cmsg agent"><div class="cbubble">Hello! Welcome to Manzanita Health Care. How can I assist you today?</div><div class="ctime">Just now</div></div>
+          <div class="cmsg agent"><div class="cbubble">I can help with scheduling, services, billing, or connect you with a nurse.</div><div class="ctime">Just now</div></div>
+        </div>
+        <div class="chat-inp-bar"><input type="text" class="chat-inp" id="chatInp" placeholder="Type your message…" onkeypress="if(event.key==='Enter')sendChat()"/><button class="chat-send" onclick="sendChat()">Send</button></div>
+      </div>
+    </div>
+  </div></div></section>
+</div>
+
+<!-- ==================== FORUM ==================== -->
+<div class="page" id="page-forum">
+  <section class="sec bg-off" style="padding-bottom:32px;"><div class="sec-in"><p class="sec-lbl">Community</p><h2 class="sec-title">Patient &amp; Family <em>Forum</em></h2><p class="sec-sub">Ask questions, share experiences, connect with the Manzanita community.</p></div></section>
+  <section class="sec" style="padding-top:36px;"><div class="sec-in"><div class="forum-layout">
+    <div>
+      <div class="fpost"><div class="fpt"><div class="fpav">JM</div><div><div class="fpname">James Morales</div><div class="fptime">2 hours ago</div></div></div><div class="fptitle">How does transitional care work after a hospital stay?</div><div class="fpbody">My mother is being discharged next week after a hip replacement. Can anyone explain the onboarding process and what to expect the first week of home care?</div><div class="fpacts"><span class="fpact" onclick="this.innerHTML='👍 12'">👍 11</span><span class="fpact">💬 Reply (3)</span><span class="fpact">🔖 Save</span></div></div>
+      <div class="fpost"><div class="fpt"><div class="fpav">SP</div><div><div class="fpname">Sarah Patel</div><div class="fptime">5 hours ago</div></div></div><div class="fptitle">Tips for communicating dietary restrictions to meal prep caregivers?</div><div class="fpbody">My father is diabetic and has a shellfish allergy. What's the best way to make sure the meal prep caregiver is fully aware? Is there a checklist Manzanita provides?</div><div class="fpacts"><span class="fpact">👍 8</span><span class="fpact">💬 Reply (5)</span><span class="fpact">🔖 Save</span></div></div>
+      <div class="fpost"><div class="fpt"><div class="fpav">LC</div><div><div class="fpname">Linda Chen</div><div class="fptime">Yesterday</div></div></div><div class="fptitle">Has anyone used telehealth for a second opinion on medication?</div><div class="fpbody">Wondering if the telehealth nurses can provide a second opinion on medication changes recommended by a specialist. Would love to hear others' experiences.</div><div class="fpacts"><span class="fpact">👍 15</span><span class="fpact">💬 Reply (7)</span><span class="fpact">🔖 Save</span></div></div>
+    </div>
+    <div>
+      <div class="sidebar-card"><div class="sc-title">Ask a Question</div><textarea class="ask-ta" id="forumQ" placeholder="What would you like to ask the community?"></textarea><button class="btn-post" onclick="postQ()">Post Question ↗</button><div class="success-msg" id="forum-ok" style="margin-top:8px;">✅ Your question has been posted!</div></div>
+      <div class="sidebar-card"><div class="sc-title">Popular Topics</div><div style="display:flex;flex-direction:column;gap:7px;margin-top:4px;"><span style="font-size:0.81rem;color:var(--mid);cursor:pointer;padding:6px 0;border-bottom:1px solid var(--border);">💊 Medication Management (24)</span><span style="font-size:0.81rem;color:var(--mid);cursor:pointer;padding:6px 0;border-bottom:1px solid var(--border);">🍽️ Meal Preparation Tips (18)</span><span style="font-size:0.81rem;color:var(--mid);cursor:pointer;padding:6px 0;border-bottom:1px solid var(--border);">📱 Telehealth Guide (15)</span><span style="font-size:0.81rem;color:var(--mid);cursor:pointer;padding:5px 0;">🔄 Transitional Care (31)</span></div></div>
+    </div>
+  </div></div></section>
+</div>
+
+<!-- ==================== GALLERY ==================== -->
+<div class="page" id="page-gallery">
+  <section class="sec bg-off" style="padding-bottom:32px;"><div class="sec-in"><p class="sec-lbl">Photo Gallery</p><h2 class="sec-title">Life at <em>Manzanita</em></h2></div></section>
+  <section class="sec" style="padding-top:36px;"><div class="sec-in">
+    <div class="gal-filters"><button class="gal-btn active" onclick="selGal(this)">All Photos</button><button class="gal-btn" onclick="selGal(this)">Community Events</button><button class="gal-btn" onclick="selGal(this)">Care Moments</button><button class="gal-btn" onclick="selGal(this)">Our Team</button><button class="gal-btn" onclick="selGal(this)">Facility</button></div>
+    <div class="gal-grid">
+      <div class="gitem g1">🏥<div class="gcap">Care Coordination Center</div></div>
+      <div class="gitem g2">👩‍⚕️<div class="gcap">Caregiver Training Day</div></div>
+      <div class="gitem g3">🍽️<div class="gcap">Nutrition Workshop</div></div>
+      <div class="gitem g4">🎉<div class="gcap">Patient Birthday Celebration</div></div>
+      <div class="gitem g5">🧘<div class="gcap">Wellness Activity Session</div></div>
+      <div class="gitem g6">🌿<div class="gcap">Garden Therapy Program</div></div>
+      <div class="gitem g1">🤝<div class="gcap">Family Partnership Meeting</div></div>
+      <div class="gitem g2">📱<div class="gcap">Telehealth Demo Day</div></div>
+      <div class="gitem g3">🏅<div class="gcap">Accreditation Ceremony 2023</div></div>
+      <div class="gitem g4">👴<div class="gcap">Art Therapy Workshop</div></div>
+      <div class="gitem g5">🎵<div class="gcap">Music Engagement Program</div></div>
+      <div class="gitem g6">🌸<div class="gcap">Spring Community Picnic</div></div>
+    </div>
+  </div></section>
+</div>
+
+<!-- ==================== VIDEOS ==================== -->
+<div class="page" id="page-videos">
+  <section class="sec bg-off" style="padding-bottom:32px;"><div class="sec-in"><p class="sec-lbl">Video Library</p><h2 class="sec-title">Watch &amp; <em>Learn</em></h2></div></section>
+  <section class="sec" style="padding-top:36px;"><div class="sec-in"><div class="vid-grid">
+    <div class="vcard" onclick="openVideoModal()"><div class="vthumb vt1"><div class="vplay"><div class="vplay-tri"></div></div></div><div class="vbody"><div class="vcat">Welcome</div><div class="vtitle">Welcome to Manzanita Health Care</div><div class="vdur">🕐 3:24</div></div></div>
+    <div class="vcard" onclick="openVideoModal()"><div class="vthumb vt2"><div class="vplay"><div class="vplay-tri"></div></div></div><div class="vbody"><div class="vcat">Services</div><div class="vtitle">What is Transitional Care?</div><div class="vdur">🕐 5:12</div></div></div>
+    <div class="vcard" onclick="openVideoModal()"><div class="vthumb vt3"><div class="vplay"><div class="vplay-tri"></div></div></div><div class="vbody"><div class="vcat">Telehealth</div><div class="vtitle">How to Use Our Telehealth Platform</div><div class="vdur">🕐 4:08</div></div></div>
+    <div class="vcard" onclick="openVideoModal()"><div class="vthumb vt4"><div class="vplay"><div class="vplay-tri"></div></div></div><div class="vbody"><div class="vcat">Training</div><div class="vtitle">Our Caregiver Certification Process</div><div class="vdur">🕐 6:45</div></div></div>
+    <div class="vcard" onclick="openVideoModal()"><div class="vthumb vt5"><div class="vplay"><div class="vplay-tri"></div></div></div><div class="vbody"><div class="vcat">Patient Story</div><div class="vtitle">Margaret's Recovery Journey</div><div class="vdur">🕐 8:30</div></div></div>
+    <div class="vcard" onclick="openVideoModal()"><div class="vthumb vt6"><div class="vplay"><div class="vplay-tri"></div></div></div><div class="vbody"><div class="vcat">Family Guide</div><div class="vtitle">How to Talk to Aging Parents About Care</div><div class="vdur">🕐 7:15</div></div></div>
+  </div></div></section>
+</div>
+
+<!-- ==================== NEWS ==================== -->
+<div class="page" id="page-news">
+  <section class="sec bg-off" style="padding-bottom:32px;"><div class="sec-in"><p class="sec-lbl">Latest Updates</p><h2 class="sec-title">News &amp; <em>Insights</em></h2></div></section>
+  <section class="sec" style="padding-top:36px;"><div class="sec-in"><div class="news-grid">
+    <div class="ncard nfeat"><div class="nimg ni-lg ni1">📰</div><div class="nbody"><div class="ncat">Agency News</div><div class="ntitle">Manzanita Receives Joint Commission Accreditation Renewal for 5th Consecutive Year</div><div class="nexcerpt">Our agency has earned its fifth consecutive accreditation from The Joint Commission, affirming our commitment to the highest standards of quality and patient safety in home health care.</div><div class="nmeta"><span>April 8, 2026</span><a href="#">Read full story →</a></div></div></div>
+    <div class="ncard"><div class="nimg ni-sm ni2">💉</div><div class="nbody"><div class="ncat">Health Tips</div><div class="ntitle">Spring Vaccination Guide for Seniors</div><div class="nexcerpt">Our RNs share recommended vaccines for adults 65+ this spring.</div><div class="nmeta"><span>Apr 5, 2026</span><a href="#">Read →</a></div></div></div>
+    <div class="ncard"><div class="nimg ni-sm ni3">🍽️</div><div class="nbody"><div class="ncat">Nutrition</div><div class="ntitle">5 Anti-Inflammatory Meals for Seniors</div><div class="nexcerpt">Easy, nutritious recipes designed by our registered dietitian for elderly patients.</div><div class="nmeta"><span>Apr 2, 2026</span><a href="#">Read →</a></div></div></div>
+    <div class="ncard"><div class="nimg ni-sm ni4">📱</div><div class="nbody"><div class="ncat">Technology</div><div class="ntitle">New Telehealth Features Now Available</div><div class="nexcerpt">Upgraded platform with improved video quality and appointment reminders.</div><div class="nmeta"><span>Mar 28, 2026</span><a href="#">Read →</a></div></div></div>
+    <div class="ncard"><div class="nimg ni-sm ni5">🏅</div><div class="nbody"><div class="ncat">Recognition</div><div class="ntitle">Named Top Bay Area Home Care Agency 2026</div><div class="nexcerpt">Honored by Bay Area Health Excellence Awards for outstanding patient outcomes.</div><div class="nmeta"><span>Mar 20, 2026</span><a href="#">Read →</a></div></div></div>
+  </div></div></section>
+</div>
+
+<!-- ==================== PARTNERSHIPS ==================== -->
+<div class="page" id="page-partnerships">
+  <section class="sec bg-off" style="padding-bottom:32px;"><div class="sec-in"><p class="sec-lbl">Our Network</p><h2 class="sec-title">Sponsors &amp; <em>Partners</em></h2></div></section>
+  <section class="sec" style="padding-top:36px;"><div class="sec-in">
+    <p style="font-size:0.78rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:var(--muted);margin-bottom:18px;">Health System Partners</p>
+    <div class="part-grid">
+      <div class="pcard2"><div class="plogo pl-b">🏥</div><div class="pname">UCSF Health</div><div class="ptype">Health System</div><div class="pdesc">Referral partner for post-acute home care and transitional services across the Bay Area.</div></div>
+      <div class="pcard2"><div class="plogo pl-t">🏨</div><div class="pname">Kaiser Permanente</div><div class="ptype">Insurance & Health</div><div class="pdesc">In-network provider for Kaiser Permanente members across the Bay Area.</div></div>
+      <div class="pcard2"><div class="plogo pl-b">🩺</div><div class="pname">Sutter Health</div><div class="ptype">Health Network</div><div class="pdesc">Collaborative care coordination for Sutter-affiliated patients and families.</div></div>
+      <div class="pcard2"><div class="plogo pl-t">💊</div><div class="pname">Stanford Health Care</div><div class="ptype">Academic Medical</div><div class="pdesc">Research collaboration on home-based chronic disease management programs.</div></div>
+    </div>
+    <p style="font-size:0.78rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:var(--muted);margin-bottom:18px;">Community Funders &amp; Supporters</p>
+    <div class="part-grid">
+      <div class="pcard2"><div class="plogo pl-g">🌟</div><div class="pname">Bay Area Community Foundation</div><div class="ptype">Funder</div><div class="pdesc">Primary funder of our low-income senior care assistance program.</div></div>
+      <div class="pcard2"><div class="plogo pl-b">🏛️</div><div class="pname">CA Dept. of Aging</div><div class="ptype">Government</div><div class="pdesc">State-funded caregiver training and elder care support grants.</div></div>
+      <div class="pcard2"><div class="plogo pl-t">👴</div><div class="pname">AARP California</div><div class="ptype">Nonprofit Partner</div><div class="pdesc">Joint advocacy for senior care policy and community education programs.</div></div>
+      <div class="pcard2"><div class="plogo pl-g">🤝</div><div class="pname">United Way Bay Area</div><div class="ptype">Community Funder</div><div class="pdesc">Annual grant support for underserved elder care services.</div></div>
+    </div>
+  </div></section>
+</div>
+
+<!-- ==================== CAREERS ==================== -->
+<div class="page" id="page-careers">
+  <section class="sec bg-off" style="padding-bottom:32px;"><div class="sec-in"><p class="sec-lbl">Join Our Team</p><h2 class="sec-title">Careers at <em>Manzanita</em></h2><p class="sec-sub">Build a meaningful career caring for Bay Area seniors. Competitive pay, training, and a supportive culture.</p></div></section>
+  <section class="sec" style="padding-top:36px;"><div class="sec-in">
+    <div class="car-grid">
+      <div class="jcard"><span class="jtag jt-ft">Full-Time</span><h3>Registered Nurse (RN) — Home Health</h3><p>Skilled nursing assessments, care plan development, and clinical oversight for home-based patients across the Bay Area.</p><div class="jmeta"><span>📍 San Francisco, CA</span><span>💰 $85,000–$110,000/yr</span><span>🩺 Active CA RN License</span></div><button class="btn-apply" onclick="showSuccess('career-ok')">Apply Now</button></div>
+      <div class="jcard"><span class="jtag jt-ft">Full-Time</span><h3>Certified Nursing Assistant (CNA)</h3><p>Assist patients with daily living, personal hygiene, medication reminders, and companionship under RN supervision.</p><div class="jmeta"><span>📍 Oakland / Fremont</span><span>💰 $22–$28/hr</span><span>🏅 CA CNA Certification</span></div><button class="btn-apply" onclick="showSuccess('career-ok')">Apply Now</button></div>
+      <div class="jcard"><span class="jtag jt-pt">Part-Time</span><h3>Home Health Aide (HHA)</h3><p>Compassionate non-medical support including companionship, light housekeeping, meal prep, and transportation.</p><div class="jmeta"><span>📍 All Bay Area Zones</span><span>💰 $18–$23/hr</span><span>🚗 Valid Driver's License</span></div><button class="btn-apply" onclick="showSuccess('career-ok')">Apply Now</button></div>
+      <div class="jcard"><span class="jtag jt-ft">Full-Time</span><h3>Care Coordinator</h3><p>Primary contact for patients and families — coordinate care plans, caregiver schedules, and quality reviews.</p><div class="jmeta"><span>📍 SF Office / Remote</span><span>💰 $55,000–$70,000/yr</span><span>💼 2+ yrs healthcare exp.</span></div><button class="btn-apply" onclick="showSuccess('career-ok')">Apply Now</button></div>
+      <div class="jcard"><span class="jtag jt-co">Contract</span><h3>Physical Therapist (PT)</h3><p>In-home physical therapy assessments and treatment plans for post-surgical and aging patients.</p><div class="jmeta"><span>📍 Peninsula / South Bay</span><span>💰 $90–$120/hr</span><span>🎓 DPT Degree Required</span></div><button class="btn-apply" onclick="showSuccess('career-ok')">Apply Now</button></div>
+      <div class="jcard"><span class="jtag jt-pt">Part-Time</span><h3>Bilingual Community Health Worker</h3><p>Serve Spanish-speaking patients — bridge cultural gaps, community outreach, and patient education.</p><div class="jmeta"><span>📍 East Bay</span><span>💰 $20–$25/hr</span><span>🌍 Bilingual EN/ES</span></div><button class="btn-apply" onclick="showSuccess('career-ok')">Apply Now</button></div>
+    </div>
+    <div class="success-msg" id="career-ok" style="max-width:480px;margin-top:20px;">✅ Application received! HR will contact you within 3 business days.</div>
+  </div></section>
+</div>
+
+<!-- ==================== FAQ ==================== -->
+<div class="page" id="page-faq">
+  <section class="sec bg-off" style="padding-bottom:32px;"><div class="sec-in tc"><p class="sec-lbl">Questions &amp; Answers</p><h2 class="sec-title">Frequently Asked <em>Questions</em></h2><p class="sec-sub">Everything you need to know about our services, billing, and getting started.</p></div></section>
+  <section class="sec" style="padding-top:36px;"><div class="sec-in">
+    <div class="faq-wrap">
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">How do I get started with Manzanita Health Care?<div class="faq-ic">+</div></button><div class="faq-a">Call us at (415) 823-4400 or fill out our online contact form. A care coordinator will reach out within 2 hours to discuss your needs and schedule a free in-home assessment at no obligation.</div></div>
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Do you accept Medicare and Medi-Cal?<div class="faq-ic">+</div></button><div class="faq-a">Yes. We are Medicare and Medi-Cal certified. We also accept most major private insurance. Our billing team will verify your coverage and communicate any out-of-pocket costs before services begin.</div></div>
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">How are caregivers screened and trained?<div class="faq-ic">+</div></button><div class="faq-a">All caregivers undergo criminal background checks, sex offender registry verification, DMV checks, TB testing, and drug screening. They complete 75+ hours of state-required training plus our internal clinical orientation before their first patient visit.</div></div>
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Can I choose my caregiver?<div class="faq-ic">+</div></button><div class="faq-a">Absolutely. After the initial assessment we present a shortlist of compatible caregivers based on skills, personality, language, and availability. You can meet them before committing to any schedule.</div></div>
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">What areas do you serve?<div class="faq-ic">+</div></button><div class="faq-a">We serve the entire San Francisco Bay Area including SF, Oakland, Fremont, San Jose, Palo Alto, Sunnyvale, Berkeley, Walnut Creek, Concord, and surrounding communities. Call us to confirm your specific zip code.</div></div>
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">How quickly can care begin?<div class="faq-ic">+</div></button><div class="faq-a">Non-urgent care typically begins within 3–5 business days. For hospital discharge situations we can often begin within 24–48 hours. Please call directly for expedited placement.</div></div>
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">What happens if my caregiver is sick or unavailable?<div class="faq-ic">+</div></button><div class="faq-a">We maintain a bench of backup caregivers familiar with our patients' care plans. If your regular caregiver is unavailable, we notify you in advance and send a trained substitute to ensure no interruption in care.</div></div>
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Is your telehealth service HIPAA compliant?<div class="faq-ic">+</div></button><div class="faq-a">Yes. Our telehealth platform is fully HIPAA and HITECH compliant. All video sessions are encrypted end-to-end. You can access telehealth via smartphone, tablet, or computer — no special software required.</div></div>
+    </div>
+    <div style="text-align:center;margin-top:44px;"><p style="font-size:0.88rem;color:var(--mid);margin-bottom:14px;">Still have questions? We're happy to help.</p><button class="btn-hero-p" onclick="nav('contact')" style="font-size:0.84rem;padding:12px 22px;">Contact Our Team →</button></div>
+  </div></section>
+</div>
+
+<!-- ==================== TERMS ==================== -->
+<div class="page" id="page-terms">
+  <section class="sec"><div class="sec-in"><p class="sec-lbl">Legal</p><h2 class="sec-title">Terms &amp; <em>Conditions</em></h2><p class="sec-sub" style="margin-bottom:44px;">Last updated: April 1, 2026. Please read these terms carefully before using our services.</p>
+    <div class="terms-wrap">
+      <h3>1. Acceptance of Terms</h3><p>By accessing Manzanita Health Care's services, website, or patient portal, you agree to be bound by these Terms and Conditions. If you do not agree, please refrain from using our services.</p>
+      <h3>2. Services Provided</h3><p>Manzanita Health Care provides non-medical and skilled home health services. All services are subject to individual care plan agreements and applicable California health regulations.</p>
+      <h3>3. Patient Rights &amp; Responsibilities</h3><ul><li>You have the right to be treated with dignity and without discrimination.</li><li>You have the right to participate in your care plan and request changes at any time.</li><li>You are responsible for providing accurate health information to your care team.</li><li>You are responsible for notifying us of schedule changes with at least 24 hours notice.</li><li>You have the right to refuse any service and file a complaint without retaliation.</li></ul>
+      <h3>4. Privacy &amp; HIPAA Compliance</h3><p>Your health information is protected under HIPAA and California law. It will not be shared without written consent except as required by law or necessary for care coordination.</p>
+      <h3>5. Billing &amp; Payment</h3><p>Invoices are issued bi-weekly. Disputes must be reported within 30 days of receipt. We accept Medicare, Medi-Cal, private insurance, and direct payment.</p>
+      <h3>6. Cancellation Policy</h3><p>Cancellations require 24 hours notice. Late cancellations may incur a fee per your service agreement. Emergency cancellations are handled at the coordinator's discretion.</p>
+      <h3>7. Contact for Legal Inquiries</h3><p>Email: <strong>legal@manzanitahealth.com</strong> · 1450 Mission Street, Suite 300, San Francisco, CA 94103</p>
+    </div>
+  </div></section>
+</div>
+
+<!-- ==================== FOOTER ==================== -->
+<div class="support-strip"><p>🕐 <strong>24/7 Care Support</strong> — Call <a href="tel:4158234400">(415) 823-4400</a> · Email <a href="mailto:care@manzanitahealth.com">care@manzanitahealth.com</a> · Follow us: <a href="#">Instagram</a> · <a href="#">Facebook</a> · <a href="#">Twitter</a></p></div>
+
+<footer>
+  <div class="foot-in">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <div class="foot-logo"><div class="foot-logo-ic"><svg viewBox="0 0 24 24"><path d="M12 21.593c-5.63-5.539-11-10.297-11-14.402 0-3.791 3.068-5.191 5.281-5.191 1.312 0 4.151.501 5.719 4.457 1.59-3.968 4.464-4.447 5.726-4.447 2.54 0 5.274 1.621 5.274 5.181 0 4.069-5.136 8.625-11 14.402z"/></svg></div><span class="foot-logo-name">Manzanita Health Care</span></div>
+        <p>Compassionate, professional home health care for elderly and recovering patients across the San Francisco Bay Area. Licensed and accredited since 2010.</p>
+        <div class="foot-social">
+          <a class="fsoc fsoc-fb" href="https://facebook.com/manzanitahealthcare" title="Facebook">f</a>
+          <a class="fsoc fsoc-ig" href="https://instagram.com/manzanitahealthcare" title="Instagram">▣</a>
+          <a class="fsoc fsoc-tw" href="https://twitter.com/manzanitahealth" title="Twitter">𝕏</a>
+          <a class="fsoc fsoc-yt" href="https://youtube.com/manzanitahealthcare" title="YouTube">▶</a>
+        </div>
+        <div class="foot-accred"><span class="facc">🏅 Joint Commission</span><span class="facc">✅ CA DHCS Licensed</span><span class="facc">🛡️ Medicare Certified</span></div>
+      </div>
+      <div class="foot-col"><h4>Services</h4><ul><li><a onclick="nav('services')">Transitional Care</a></li><li><a onclick="nav('services')">Personal Hygiene</a></li><li><a onclick="nav('services')">Companionship</a></li><li><a onclick="nav('services')">Meal Preparation</a></li><li><a onclick="nav('services')">Medicines Delivery</a></li><li><a onclick="nav('services')">Telehealth Care</a></li><li><a onclick="nav('services')">Adult Day Care</a></li></ul></div>
+      <div class="foot-col"><h4>Company</h4><ul><li><a onclick="nav('about')">About Us</a></li><li><a onclick="nav('staff')">Our Team</a></li><li><a onclick="nav('howwehelp')">How We Help</a></li><li><a onclick="nav('partnerships')">Partnerships</a></li><li><a onclick="nav('testimonials')">Testimonials</a></li><li><a onclick="nav('news')">News</a></li><li><a onclick="nav('careers')">Careers</a></li></ul></div>
+      <div class="foot-col"><h4>Support</h4><ul><li><a onclick="nav('contact')">Contact Us</a></li><li><a onclick="nav('faq')">FAQ</a></li><li><a onclick="nav('portal')">Patient Portal</a></li><li><a onclick="nav('schedule')">Schedule a Visit</a></li><li><a onclick="nav('payment')">Payment Options</a></li><li><a onclick="nav('feedback')">Leave Feedback</a></li><li><a onclick="nav('forum')">Community Forum</a></li></ul></div>
+    </div>
+    <div class="foot-bot">
+      <p>© 2026 Manzanita Health Care, Inc. All rights reserved. CA DHCS License #HSC-123456</p>
+      <div class="foot-bot-links"><a onclick="nav('terms')">Terms &amp; Conditions</a><a href="#">Privacy Policy</a><a href="#">HIPAA Notice</a><a href="#">Accessibility</a></div>
+    </div>
+  </div>
+</footer>
+
+<script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
